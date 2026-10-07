@@ -56,6 +56,14 @@ a {
 .detail-hero {
   padding: 8rem 0 4rem;
 }
+.project-disclaimer {
+  margin: -2rem 0 4rem;
+  padding: 1rem 1.2rem;
+  border-left: 3px solid var(--blue);
+  background: rgba(181, 99, 69, 0.08);
+  color: var(--dim);
+  font: 400 0.78rem/1.65 var(--mono);
+}
 .eyebrow {
   font: 400 0.68rem var(--mono);
   letter-spacing: 0.15em;

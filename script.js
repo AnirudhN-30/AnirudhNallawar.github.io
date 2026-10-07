@@ -1,26 +1,3 @@
-function shuffle(items) {
-  const copy = [...items];
-  for (let i = copy.length - 1; i > 0; i -= 1) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [copy[i], copy[j]] = [copy[j], copy[i]];
-  }
-  return copy;
-}
-
-function renderPhotography() {
-  const container = document.querySelector('#photo-collage');
-  const images = window.PHOTOGRAPHY_IMAGES || [];
-  if (!container || !images.length) return;
-  container.innerHTML = '';
-  shuffle(images).slice(0, 9).forEach((src, index) => {
-    const image = document.createElement('img');
-    image.src = src;
-    image.alt = `Photography by Anirudh Nallawar, selection ${index + 1}`;
-    image.loading = 'lazy';
-    container.appendChild(image);
-  });
-}
-
 function initializeNavigation() {
   const header = document.querySelector('.site-header');
   const button = document.querySelector('.menu-button');
@@ -85,10 +62,52 @@ function initializeSkillsSlider() {
   show(0);
 }
 
+function initializeCustomCursor() {
+  const finePointer = window.matchMedia('(pointer: fine)');
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  if (!finePointer.matches || reducedMotion.matches) return;
+
+  const cursor = document.createElement('div');
+  cursor.className = 'cursor-orbit';
+  cursor.setAttribute('aria-hidden', 'true');
+  cursor.innerHTML = '<span class="cursor-ring"></span><span class="cursor-dot"></span>';
+  document.body.appendChild(cursor);
+  document.documentElement.classList.add('has-custom-cursor');
+
+  const ring = cursor.querySelector('.cursor-ring');
+  const dot = cursor.querySelector('.cursor-dot');
+  let pointerX = -100;
+  let pointerY = -100;
+  let ringX = -100;
+  let ringY = -100;
+
+  const animate = () => {
+    ringX += (pointerX - ringX) * 0.16;
+    ringY += (pointerY - ringY) * 0.16;
+    ring.style.transform = `translate3d(${ringX}px, ${ringY}px, 0) translate(-50%, -50%)`;
+    requestAnimationFrame(animate);
+  };
+
+  window.addEventListener('pointermove', (event) => {
+    pointerX = event.clientX;
+    pointerY = event.clientY;
+    dot.style.transform = `translate3d(${pointerX}px, ${pointerY}px, 0) translate(-50%, -50%)`;
+    cursor.classList.add('is-visible');
+  }, { passive: true });
+
+  document.addEventListener('pointerover', (event) => {
+    cursor.classList.toggle('is-interactive', Boolean(event.target.closest('a, button, [role="button"]')));
+  });
+  document.addEventListener('pointerleave', () => cursor.classList.remove('is-visible'));
+  document.addEventListener('pointerenter', () => cursor.classList.add('is-visible'));
+  window.addEventListener('blur', () => cursor.classList.remove('is-visible'));
+
+  animate();
+}
+
 window.addEventListener('DOMContentLoaded', () => {
-  renderPhotography();
-  document.querySelector('#reshuffle-photos')?.addEventListener('click', renderPhotography);
   initializeNavigation();
   initializeReveals();
   initializeSkillsSlider();
+  initializeCustomCursor();
 });

@@ -9,9 +9,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=20261006">
-  <script defer src="photography-manifest.js"></script>
-  <script defer src="script.js"></script>
+  <link rel="stylesheet" href="styles.css?v=20261007-10">
+  <script defer src="script.js?v=20261007-4"></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -24,7 +23,6 @@
         <a href="#skills"><small>02</small> Skills</a>
         <a href="#work"><small>03</small> Work</a>
         <a href="#about"><small>04</small> About</a>
-        <a href="#photography"><small>05</small> Photos</a>
         <a href="cv.html" target="_blank" rel="noreferrer">CV ↗</a>
         <a class="nav-cta" href="#contact">Get in touch</a>
       </div>
@@ -82,32 +80,22 @@
 
     <section class="section border-top" id="projects">
       <div class="shell">
-        <div class="section-heading reveal"><p class="kicker"><span></span> Selected work</p><h2>Systems built to leave the screen.</h2></div>
-        <div class="project-list">
-          <article class="project reveal">
-            <a class="project-image" href="projects/indi-flight.html"><img src="assets/indiflight/demo-poster.jpg" alt="INDI flight-control test in WPI's indoor flight space"><span>View case study ↗</span></a>
-            <div class="project-copy" id="project-flight"><p class="project-number">01 / FLIGHT CONTROLS</p><h3>INDI Flight Control &amp; Benchmarking</h3><p>Ported TU Delft’s INDI controller to Betaflight 4.5, integrated Jetson communication, reconciled frame conventions, and validated both command modes across more than 100 real-world flights at up to 12 m/s.</p><ul><li>Betaflight 4.5</li><li>INDI</li><li>DQ-NMPC</li></ul><a class="learn-link" href="projects/indi-flight.html">Learn more <span>→</span></a></div>
-          </article>
-          <article class="project reverse reveal">
-            <a class="project-image" href="projects/payload-control.html"><img src="assets/payload/poster.jpg" alt="Cable-suspended payload control simulation"><span>View case study ↗</span></a>
-            <div class="project-copy" id="project-payload"><p class="project-number">02 / ROBOT LEARNING</p><h3>Cable-Suspended Payload Control</h3><p>Built a complete MuJoCo/MJLab training environment for payload transport, modeled tendon constraints, validated the low-level PID controller, and retuned PPO rewards for a heavier 1 kg quadrotor carrying up to 200 g.</p><ul><li>MuJoCo</li><li>MJLab</li><li>PPO</li></ul><a class="learn-link" href="projects/payload-control.html">Learn more <span>→</span></a></div>
-          </article>
-          <article class="project reveal">
-            <a class="project-image" href="projects/motion-planning.html"><img src="assets/motion-planning.png" alt="Task and motion planning simulation"><span>View case study ↗</span></a>
-            <div class="project-copy" id="project-plan"><p class="project-number">03 / ROBOTICS SOFTWARE</p><h3>Task &amp; Motion Planning Framework</h3><p>An end-to-end manipulation system that combines PDDL task planning with collision-free OMPL trajectories to build block structures in the Genesis simulator.</p><ul><li>Genesis</li><li>OMPL</li><li>PDDL</li></ul><a class="learn-link" href="projects/motion-planning.html">Learn more <span>→</span></a></div>
-          </article>
-        </div>
-        <div class="more-projects reveal">
-          <p class="kicker"><span></span> Research & more builds</p><a href="projects/hubot-3.html"><b>HuBot 3.0</b><span>MuJoCo · LQR · PPO</span><i>↗</i></a>
-<a href="projects/rocket-league.html"><b>Curriculum RL for Rocket League</b><span>PPO · Curriculum Learning</span><i>↗</i></a>
-<a href="projects/einsteinvision.html"><b>EinsteinVision</b><span>YOLO · UniDepth · DINOv2</span><i>↗</i></a>
-<a href="projects/visual-inertial-odometry.html"><b>Classical & Learned Visual-Inertial Odometry</b><span>Stereo MSCKF · EKF · Deep VIO</span><i>↗</i></a>
-<a href="projects/reconstruction.html"><b>Structure-from-Motion & NeRF</b><span>RANSAC · Bundle Adjustment · NeRF</span><i>↗</i></a>
-
-          <a href="projects/virtual-lab.html"><b>Virtual Microcontroller Lab</b><span>Embedded education platform</span><i>↗</i></a>
-          <a href="projects/robocon-2022.html"><b>ROBOCON 2022 · Lagori Robots</b><span>35 kg semi-autonomous competition robot</span><i>↗</i></a>
-          <a href="projects/robocon-2023.html"><b>ROBOCON 2023 · Angkor Wat</b><span>National fifth-place competition robots</span><i>↗</i></a>
-          <a href="projects/hubot.html"><b>Hubot 2.0</b><span>Self-balancing humanoid torso research</span><i>↗</i></a>
+        <div class="section-heading reveal"><p class="kicker"><span></span> Project archive</p><h2>Explore the systems I’ve built.</h2></div>
+        <div class="project-grid">
+          <article class="project-tile reveal"><a class="project-tile-media project-tile-media-contain media-white" href="projects/indi-flight.html" aria-label="Explore INDI Flight Control and Benchmarking"><img src="assets/title_card/INDI.jpeg" alt="Quadrotor hardware used for INDI flight-control testing"><span class="project-tile-number">01</span></a><div class="project-tile-body"><p>Flight controls · System identification</p><h3>INDI Flight Control &amp; Benchmarking</h3><a href="projects/indi-flight.html">Explore project <span>↗</span></a></div></article>
+          <article class="project-tile reveal"><a class="project-tile-media project-tile-media-contain media-navy" href="projects/payload-control.html" aria-label="Explore Cable-Suspended Payload Control"><img src="assets/title_card/Quadrotor_Payload_model.png" alt="Quadrotor carrying a cable-suspended payload in simulation"><span class="project-tile-number">02</span></a><div class="project-tile-body"><p>Robotics · Reinforcement learning</p><h3>Cable-Suspended Payload Control</h3><a href="projects/payload-control.html">Explore project <span>↗</span></a></div></article>
+          <article class="project-tile reveal"><a class="project-tile-media project-tile-media-contain media-navy" href="projects/motion-planning.html" aria-label="Explore Task and Motion Planning Framework"><img src="assets/title_card/TAMP.png" alt="Robotic arm performing a block-building task in simulation"><span class="project-tile-number">03</span></a><div class="project-tile-body"><p>Autonomy · Planning</p><h3>Task &amp; Motion Planning Framework</h3><a href="projects/motion-planning.html">Explore project <span>↗</span></a></div></article>
+          <article class="project-tile reveal"><a class="project-tile-media project-tile-placeholder tone-sage" href="projects/hubot-3.html" aria-label="Explore HuBot 3.0"><span class="project-placeholder-mark" aria-hidden="true">H3</span><span class="project-tile-number">04</span></a><div class="project-tile-body"><p>Humanoid robotics · RL</p><h3>HuBot 3.0</h3><a href="projects/hubot-3.html">Explore project <span>↗</span></a></div></article>
+          <article class="project-tile reveal"><a class="project-tile-media project-tile-placeholder tone-sky" href="projects/rocket-league.html" aria-label="Explore Curriculum RL for Rocket League"><span class="project-placeholder-mark" aria-hidden="true">RL</span><span class="project-tile-number">05</span></a><div class="project-tile-body"><p>Multi-agent learning</p><h3>Curriculum RL for Rocket League</h3><a href="projects/rocket-league.html">Explore project <span>↗</span></a></div></article>
+          <article class="project-tile reveal"><a class="project-tile-media project-tile-media-contain media-navy" href="projects/einsteinvision.html" aria-label="Explore EinsteinVision"><img src="assets/title_card/Einstein_Vision.png" alt="EinsteinVision road-scene depth reconstruction" loading="lazy"><span class="project-tile-number">06</span></a><div class="project-tile-body"><p>Computer vision · 3D perception</p><h3>EinsteinVision</h3><a href="projects/einsteinvision.html">Explore project <span>↗</span></a></div></article>
+          <article class="project-tile reveal"><a class="project-tile-media project-tile-media-contain media-navy" href="projects/visual-inertial-odometry.html" aria-label="Explore Visual-Inertial Odometry"><img src="assets/title_card/VIO.jpg" alt="Textured scene used for visual-inertial odometry evaluation" loading="lazy"><span class="project-tile-number">07</span></a><div class="project-tile-body"><p>State estimation · Perception</p><h3>Visual-Inertial Odometry</h3><a href="projects/visual-inertial-odometry.html">Explore project <span>↗</span></a></div></article>
+          <article class="project-tile reveal"><a class="project-tile-media project-tile-media-contain media-white" href="projects/reconstruction.html" aria-label="Explore Structure-from-Motion and NeRF"><img src="assets/title_card/NERF.png" alt="NeRF reconstruction of a green model car" loading="lazy"><span class="project-tile-number">08</span></a><div class="project-tile-body"><p>3D reconstruction · Neural rendering</p><h3>Structure-from-Motion &amp; NeRF</h3><a href="projects/reconstruction.html">Explore project <span>↗</span></a></div></article>
+          <article class="project-tile reveal"><a class="project-tile-media project-tile-media-contain media-white" href="projects/virtual-lab.html" aria-label="Explore Virtual Microcontroller Lab"><img src="assets/title_card/vlabs.jpg" alt="Virtual Labs initiative logo" loading="lazy"><span class="project-tile-number">09</span></a><div class="project-tile-body"><p>Embedded systems · Education</p><h3>Virtual Microcontroller Lab</h3><a href="projects/virtual-lab.html">Explore project <span>↗</span></a></div></article>
+          <article class="project-tile reveal"><a class="project-tile-media" href="projects/robocon-2022.html" aria-label="Explore ROBOCON 2022 Lagori Robots"><img src="assets/robocon2022.jpeg" alt="ROBOCON 2022 Lagori competition robot" loading="lazy"><span class="project-tile-number">10</span></a><div class="project-tile-body"><p>Competition robotics</p><h3>ROBOCON 2022 · Lagori Robots</h3><a href="projects/robocon-2022.html">Explore project <span>↗</span></a></div></article>
+          <article class="project-tile reveal"><a class="project-tile-media" href="projects/robocon-2023.html" aria-label="Explore ROBOCON 2023 Angkor Wat"><img src="assets/robocon2023.jpeg" alt="ROBOCON 2023 Angkor Wat competition robot" loading="lazy"><span class="project-tile-number">11</span></a><div class="project-tile-body"><p>Competition robotics · Leadership</p><h3>ROBOCON 2023 · Angkor Wat</h3><a href="projects/robocon-2023.html">Explore project <span>↗</span></a></div></article>
+          <article class="project-tile reveal"><a class="project-tile-media project-tile-media-contain media-navy" href="projects/hubot.html" aria-label="Explore HuBot 2.0"><img src="assets/title_card/Hubot_2.png" alt="HuBot 2.0 humanoid torso robot" loading="lazy"><span class="project-tile-number">12</span></a><div class="project-tile-body"><p>Research · Humanoid robotics</p><h3>HuBot 2.0</h3><a href="projects/hubot.html">Explore project <span>↗</span></a></div></article>
+          <article class="project-tile reveal"><a class="project-tile-media project-tile-media-contain media-white" href="projects/quadrotor-control.html" aria-label="Explore Quadrotor Control"><img src="assets/title_card/quadrotor-control.png" alt="Quadrotor model in a control simulation" loading="lazy"><span class="project-tile-number">13</span></a><div class="project-tile-body"><p>Aerial robotics · Controls</p><h3>Quadrotor Control</h3><a href="projects/quadrotor-control.html">Explore project <span>↗</span></a></div></article>
+          <article class="project-tile reveal"><a class="project-tile-media project-tile-media-contain media-navy" href="projects/openmanipulator.html" aria-label="Explore OpenManipulator Control"><img src="assets/title_card/open_manipulator.jpeg" alt="OpenManipulator robotic arm above a calibration board" loading="lazy"><span class="project-tile-number">14</span></a><div class="project-tile-body"><p>Robotics · Manipulation</p><h3>OpenManipulator Control</h3><a href="projects/openmanipulator.html">Explore project <span>↗</span></a></div></article>
         </div>
       </div>
     </section>
@@ -151,14 +139,6 @@
 <article class="work-item reveal"><div class="work-meta"><p>Dec 2021</p></div><div class="work-copy"><h3>Robotics publication · ARMS’21</h3><p>Development of Robotic Arm Manipulator mounted on Self Balancing Two-Wheeled Mobile Robot.</p></div></article>
 <article class="work-item reveal"><div class="work-meta"><p>2021 — 2023</p></div><div class="work-copy"><h3>Awards</h3><p>Second place, MATLAB Modelling Award at ROBOCON 2023; Dedication and Invaluable Contribution Award, COEP (2023); second place, Virtual Robotics at MindSpark’21.</p></div></article>
 </div></div></section>
-    <section class="section border-top beyond" id="photography">
-      <div class="shell">
-        <div class="photo-heading reveal"><div><p class="kicker"><span></span> Photography</p><h2>Frames from outside the lab.</h2></div><p>Photography trains the same instinct I bring to engineering: notice the detail, understand the motion, and frame the problem well. A new edit is selected on every visit.</p></div>
-        <div id="photo-collage" class="photo-gallery reveal" aria-label="A selection of Anirudh's photography"></div>
-        <div class="photo-footer reveal"><span>Travel · campus · robotics · everyday scenes</span><button id="reshuffle-photos" type="button">Shuffle the gallery ↻</button></div>
-      </div>
-    </section>
-
     <section class="contact border-top" id="contact">
       <div class="shell reveal">
         <p class="kicker"><span></span> Start a conversation</p>
