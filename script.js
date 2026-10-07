@@ -17,6 +17,31 @@ function initializeNavigation() {
   });
 }
 
+function initializePageOrder() {
+  const main = document.querySelector('#main');
+  if (!main) return;
+  const sections = [
+    document.querySelector('#top'),
+    document.querySelector('#work'),
+    document.querySelector('#projects'),
+    document.querySelector('#skills'),
+    document.querySelector('#archive'),
+    document.querySelector('#about'),
+    document.querySelector('#main > .education'),
+    document.querySelector('#recognition'),
+    document.querySelector('#contact'),
+  ];
+  sections.filter(Boolean).forEach((section) => main.appendChild(section));
+
+  if (window.location.hash) {
+    const scrollToInitialSection = () => {
+      document.querySelector(window.location.hash)?.scrollIntoView();
+    };
+    window.requestAnimationFrame(scrollToInitialSection);
+    window.addEventListener('load', scrollToInitialSection, { once: true });
+  }
+}
+
 function initializeReveals() {
   const items = document.querySelectorAll('.reveal');
   if (!('IntersectionObserver' in window)) {
@@ -177,9 +202,54 @@ function initializeCustomCursor() {
   animate();
 }
 
+function initializeProjectRoles() {
+  const tabs = [...document.querySelectorAll('[data-project-role]')];
+  const panels = [...document.querySelectorAll('[data-role-panel]')];
+  const container = document.querySelector('.role-project-groups');
+  if (!tabs.length || !panels.length || !container) return;
+
+  const panelFor = (role) => panels.find((panel) => panel.dataset.rolePanel === role);
+  tabs.forEach((tab) => {
+    const panel = panelFor(tab.dataset.projectRole);
+    if (!panel) return;
+    panel.id = `role-panel-${tab.dataset.projectRole}`;
+    tab.setAttribute('aria-controls', panel.id);
+    container.appendChild(panel);
+  });
+
+  const showRole = (role) => {
+    tabs.forEach((tab) => {
+      const selected = tab.dataset.projectRole === role;
+      tab.classList.toggle('active', selected);
+      tab.setAttribute('aria-selected', String(selected));
+      tab.tabIndex = selected ? 0 : -1;
+    });
+    panels.forEach((panel) => {
+      const selected = panel.dataset.rolePanel === role;
+      panel.hidden = !selected;
+      if (selected) panel.classList.add('visible');
+    });
+  };
+
+  tabs.forEach((tab, index) => {
+    tab.addEventListener('click', () => showRole(tab.dataset.projectRole));
+    tab.addEventListener('keydown', (event) => {
+      if (!['ArrowLeft', 'ArrowRight'].includes(event.key)) return;
+      event.preventDefault();
+      const direction = event.key === 'ArrowRight' ? 1 : -1;
+      const next = tabs[(index + direction + tabs.length) % tabs.length];
+      next.focus();
+      showRole(next.dataset.projectRole);
+    });
+  });
+
+  showRole(tabs.find((tab) => tab.classList.contains('active'))?.dataset.projectRole || tabs[0].dataset.projectRole);
+}
+
 window.addEventListener('DOMContentLoaded', () => {
+  initializePageOrder();
   initializeNavigation();
   initializeReveals();
-  initializeSkillsSlider();
+  initializeProjectRoles();
   initializeCustomCursor();
 });

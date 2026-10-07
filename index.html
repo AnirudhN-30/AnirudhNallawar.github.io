@@ -9,8 +9,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=20261007-11">
-  <script defer src="script.js?v=20261007-5"></script>
+  <link rel="stylesheet" href="styles.css?v=20261007-18">
+  <script defer src="script.js?v=20261007-10"></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -19,9 +19,9 @@
       <a class="wordmark" href="#top" aria-label="Anirudh Nallawar, home">Anirudh <span>Nallawar</span></a>
       <button class="menu-button" type="button" aria-expanded="false" aria-controls="nav-links">Menu</button>
       <div class="nav-links" id="nav-links">
-        <a href="#projects"><small>01</small> Projects</a>
-        <a href="#skills"><small>02</small> Skills</a>
-        <a href="#work"><small>03</small> Work</a>
+        <a href="#work"><small>01</small> Work</a>
+        <a href="#projects"><small>02</small> Projects</a>
+        <a href="#skills"><small>03</small> Skills</a>
         <a href="#about"><small>04</small> About</a>
         <a href="cv.html" target="_blank" rel="noreferrer">CV ↗</a>
         <a class="nav-cta" href="#contact">Get in touch</a>
@@ -52,50 +52,70 @@
 
     <section class="section skills-section" id="skills">
       <div class="shell">
-        <div class="skills-heading reveal"><div><p class="kicker"><span></span> Technical toolkit</p><h2>Controls, learning, and firmware for physical systems.</h2></div><p>Organized around the work I do: robotics software and controls, robot learning, embedded firmware, and perception.</p></div>
-        <div class="skill-tabs reveal" role="tablist" aria-label="Skill categories">
-          <button class="active" type="button" role="tab" aria-selected="true" data-skill-slide="0">Robotics &amp; controls</button>
-          <button type="button" role="tab" aria-selected="false" data-skill-slide="1">Robot learning</button>
-          <button type="button" role="tab" aria-selected="false" data-skill-slide="2">Embedded firmware</button>
-          <button type="button" role="tab" aria-selected="false" data-skill-slide="3">Programming</button>
-          <button type="button" role="tab" aria-selected="false" data-skill-slide="4">Perception</button>
-          <button type="button" role="tab" aria-selected="false" data-skill-slide="5">Simulation</button>
-          <button type="button" role="tab" aria-selected="false" data-skill-slide="6">Automotive</button>
-          <button type="button" role="tab" aria-selected="false" data-skill-slide="7">Tools &amp; hardware</button></div>
-        <div class="skills-window reveal">
-          <div class="skills-track" id="skills-track">
-            <article class="skills-slide" aria-label="Robotics and control skills"><div class="slide-index">01 / 08</div><div><h3>Robotics software &amp; controls</h3><p>Planning, estimation, and feedback control for robots operating under real physical constraints.</p><div class="skill-grid"><span class="skill"><img src="assets/skills/ros.svg" alt="">ROS 2</span><span class="skill"><i>PI</i>PID</span><span class="skill"><i>IN</i>INDI</span><span class="skill"><i>LQ</i>LQR</span><span class="skill"><i>NM</i>NMPC</span><span class="skill"><i>↝</i>Trajectory Generation</span><span class="skill"><i>KD</i>Kinematics &amp; Dynamics</span><span class="skill"><i>TP</i>Task &amp; Motion Planning</span><span class="skill"><i>GC</i>Geometric Control</span><span class="skill"><i>SM</i>State Machines</span></div></div></article>
-            <article class="skills-slide" aria-label="Robot learning skills"><div class="slide-index">02 / 08</div><div><h3>Robot learning</h3><p>Policy training and evaluation for dynamic robotic systems and sim-to-real deployment.</p><div class="skill-grid"><span class="skill"><i>RL</i>Reinforcement Learning</span><span class="skill"><i>PP</i>PPO</span><span class="skill"><i>RS</i>Reward Shaping</span><span class="skill"><i>CL</i>Curriculum Learning</span><span class="skill"><i>DR</i>Domain Randomization</span><span class="skill"><i>PE</i>Policy Evaluation</span><span class="skill"><i>PT</i>PyTorch</span></div></div></article>
-            <article class="skills-slide" aria-label="Embedded firmware skills"><div class="slide-index">03 / 08</div><div><h3>Embedded firmware</h3><p>Production firmware, MCU bring-up, communication buses, and reliable field updates.</p><div class="skill-grid"><span class="skill"><img src="assets/skills/stm32.svg" alt="">STM32</span><span class="skill"><i>RT</i>FreeRTOS</span><span class="skill"><i>BL</i>Bootloaders</span><span class="skill"><i>DD</i>Device Drivers</span><span class="skill"><i>↑</i>OTA Updates</span><span class="skill"><i>CA</i>CAN</span><span class="skill"><i>SP</i>SPI</span><span class="skill"><i>I²</i>I²C</span><span class="skill"><i>UA</i>UART</span><span class="skill"><img src="assets/skills/bluetooth.svg" alt="">BLE</span><span class="skill"><i>OS</i>OctoSPI</span></div></div></article>
-            <article class="skills-slide" aria-label="Programming skills"><div class="slide-index">04 / 08</div><div><h3>Programming &amp; platforms</h3><p>The languages and operating environments behind my robotics and embedded work.</p><div class="skill-grid"><span class="skill"><img src="assets/skills/c.svg" alt="">C</span><span class="skill"><img src="assets/skills/cplusplus.svg" alt="">C++</span><span class="skill"><i>EC</i>Embedded C</span><span class="skill"><img src="assets/skills/python.svg" alt="">Python</span><span class="skill"><i>ML</i>MATLAB</span><span class="skill"><img src="assets/skills/linux.svg" alt="">Linux</span></div></div></article>
-            <article class="skills-slide" aria-label="Perception skills"><div class="slide-index">05 / 08</div><div><h3>Perception</h3><p>Estimating motion, depth, and scene structure from cameras and inertial sensors.</p><div class="skill-grid"><span class="skill"><i>CV</i>Computer Vision</span><span class="skill"><i>SV</i>Stereo Vision</span><span class="skill"><i>VI</i>Visual-Inertial Odometry</span><span class="skill"><i>EK</i>EKF / MSCKF</span><span class="skill"><i>DE</i>Depth Estimation</span><span class="skill"><i>PC</i>Point Clouds</span><span class="skill"><i>SF</i>Structure-from-Motion</span><span class="skill"><i>NF</i>NeRF</span><span class="skill"><i>DL</i>Deep Learning</span></div></div></article>
-            <article class="skills-slide" aria-label="Simulation skills"><div class="slide-index">06 / 08</div><div><h3>Simulation &amp; planning</h3><p>Physics environments and planning tools used to train and validate systems before hardware.</p><div class="skill-grid"><span class="skill"><i>MJ</i>MuJoCo</span><span class="skill"><i>MW</i>MuJoCo Warp</span><span class="skill"><i>GN</i>Genesis</span><span class="skill"><i>GZ</i>Gazebo</span><span class="skill"><i>OM</i>OMPL</span><span class="skill"><i>SL</i>Simulink</span><span class="skill"><i>PR</i>Proteus</span></div></div></article>
-            <article class="skills-slide" aria-label="Automotive and EV skills"><div class="slide-index">07 / 08</div><div><h3>Automotive &amp; EV</h3><p>Vehicle-level control, rider interfaces, charging, and functional safety features.</p><div class="skill-grid"><span class="skill"><i>VC</i>VCU</span><span class="skill"><i>IC</i>Instrument Cluster</span><span class="skill"><i>EV</i>EV Charger Control</span><span class="skill"><i>CC</i>CC–CV</span><span class="skill"><i>VS</i>Vehicle Safety Systems</span></div></div></article>
-            <article class="skills-slide" aria-label="Development tools and hardware design"><div class="slide-index">08 / 08</div><div><h3>Tools &amp; hardware</h3><p>The toolchain and hardware literacy used to ship, debug, and validate complete systems.</p><div class="skill-grid"><span class="skill"><img src="assets/skills/git.svg" alt="">Git</span><span class="skill"><img src="assets/skills/docker.svg" alt="">Docker</span><span class="skill"><i>SG</i>Singularity</span><span class="skill"><i>CU</i>STM32CubeIDE</span><span class="skill"><i>KE</i>Keil</span><span class="skill"><i>VS</i>VS Code</span><span class="skill"><i>++</i>CANdb++</span><span class="skill"><i>SC</i>Schematic Capture</span><span class="skill"><i>PC</i>PCB Design</span><span class="skill"><i>AL</i>Altium Designer</span></div></div></article>
-          </div>
-          <div class="skills-controls"><button id="skills-prev" type="button" aria-label="Previous skill category">←</button><span id="skills-position">01 — 08</span><button id="skills-next" type="button" aria-label="Next skill category">→</button></div>
+        <div class="skills-heading reveal"><div><p class="kicker"><span></span> Technical toolkit</p><h2>The core skills behind my robotics work.</h2></div><p>A focused overview of the languages, controls, learning tools, and embedded systems I use most.</p></div>
+        <div class="essential-skills reveal" aria-label="Essential technical skills">
+          <div class="skill-cluster"><h3>Programming &amp; platforms</h3><div><span>C++</span><span>Python</span><span>C</span><span>ROS 2</span><span>Linux</span></div></div>
+          <div class="skill-cluster"><h3>Controls &amp; autonomy</h3><div><span>PID</span><span>INDI</span><span>PX4</span><span>Betaflight</span><span>NMPC</span><span>Trajectory Generation</span><span>Task &amp; Motion Planning</span></div></div>
+          <div class="skill-cluster"><h3>Learning &amp; simulation</h3><div><span>PyTorch</span><span>Reinforcement Learning</span><span>PPO</span><span>MuJoCo</span><span>Gazebo</span></div></div>
+          <div class="skill-cluster"><h3>Embedded systems</h3><div><span>STM32</span><span>FreeRTOS</span><span>CAN</span><span>BLE</span><span>Bootloaders &amp; OTA</span></div></div>
+          <div class="skill-cluster"><h3>Perception</h3><div><span>Computer Vision</span><span>Visual-Inertial Odometry</span><span>Depth Estimation</span><span>Point Clouds</span></div></div>
         </div>
       </div>
     </section>
 
     <section class="section border-top" id="projects">
       <div class="shell">
-        <div class="section-heading reveal"><p class="kicker"><span></span> Project archive</p><h2>Explore the systems I’ve built.</h2></div>
-        <div class="project-grid">
+        <div class="section-heading reveal"><p class="kicker"><span></span> Featured projects</p><h2>Three systems that define my work.</h2></div>
+        <div class="project-grid featured-grid">
           <article class="project-tile reveal"><a class="project-tile-media project-tile-media-contain media-white" href="projects/indi-flight.html" aria-label="Explore INDI Flight Control and Benchmarking"><img src="assets/title_card/INDI.jpeg" alt="Quadrotor hardware used for INDI flight-control testing"><span class="project-tile-number">01</span></a><div class="project-tile-body"><p>Flight controls · System identification</p><h3>INDI Flight Control &amp; Benchmarking</h3><a href="projects/indi-flight.html">Explore project <span>↗</span></a></div></article>
           <article class="project-tile reveal"><a class="project-tile-media project-tile-media-contain media-navy" href="projects/payload-control.html" aria-label="Explore Cable-Suspended Payload Control"><img src="assets/title_card/Quadrotor_Payload_model.png" alt="Quadrotor carrying a cable-suspended payload in simulation"><span class="project-tile-number">02</span></a><div class="project-tile-body"><p>Robotics · Reinforcement learning</p><h3>Cable-Suspended Payload Control</h3><a href="projects/payload-control.html">Explore project <span>↗</span></a></div></article>
           <article class="project-tile reveal"><a class="project-tile-media project-tile-media-contain media-navy" href="projects/motion-planning.html" aria-label="Explore Task and Motion Planning Framework"><img src="assets/title_card/TAMP.png" alt="Robotic arm performing a block-building task in simulation"><span class="project-tile-number">03</span></a><div class="project-tile-body"><p>Autonomy · Planning</p><h3>Task &amp; Motion Planning Framework</h3><a href="projects/motion-planning.html">Explore project <span>↗</span></a></div></article>
-          <article class="project-tile reveal"><a class="project-tile-media project-tile-placeholder tone-sage" href="projects/hubot-3.html" aria-label="Explore HuBot 3.0"><span class="project-placeholder-mark" aria-hidden="true">H3</span><span class="project-tile-number">04</span></a><div class="project-tile-body"><p>Humanoid robotics · RL</p><h3>HuBot 3.0</h3><a href="projects/hubot-3.html">Explore project <span>↗</span></a></div></article>
-          <article class="project-tile reveal"><a class="project-tile-media project-tile-placeholder tone-sky" href="projects/rocket-league.html" aria-label="Explore Curriculum RL for Rocket League"><span class="project-placeholder-mark" aria-hidden="true">RL</span><span class="project-tile-number">05</span></a><div class="project-tile-body"><p>Multi-agent learning</p><h3>Curriculum RL for Rocket League</h3><a href="projects/rocket-league.html">Explore project <span>↗</span></a></div></article>
-          <article class="project-tile reveal"><a class="project-tile-media project-tile-media-contain media-navy" href="projects/einsteinvision.html" aria-label="Explore EinsteinVision"><img src="assets/title_card/Einstein_Vision.png" alt="EinsteinVision road-scene depth reconstruction" loading="lazy"><span class="project-tile-number">06</span></a><div class="project-tile-body"><p>Computer vision · 3D perception</p><h3>EinsteinVision</h3><a href="projects/einsteinvision.html">Explore project <span>↗</span></a></div></article>
-          <article class="project-tile reveal"><a class="project-tile-media project-tile-media-contain media-navy" href="projects/visual-inertial-odometry.html" aria-label="Explore Visual-Inertial Odometry"><img src="assets/title_card/VIO.jpg" alt="Textured scene used for visual-inertial odometry evaluation" loading="lazy"><span class="project-tile-number">07</span></a><div class="project-tile-body"><p>State estimation · Perception</p><h3>Visual-Inertial Odometry</h3><a href="projects/visual-inertial-odometry.html">Explore project <span>↗</span></a></div></article>
-          <article class="project-tile reveal"><a class="project-tile-media project-tile-media-contain media-white" href="projects/reconstruction.html" aria-label="Explore Structure-from-Motion and NeRF"><img src="assets/title_card/NERF.png" alt="NeRF reconstruction of a green model car" loading="lazy"><span class="project-tile-number">08</span></a><div class="project-tile-body"><p>3D reconstruction · Neural rendering</p><h3>Structure-from-Motion &amp; NeRF</h3><a href="projects/reconstruction.html">Explore project <span>↗</span></a></div></article>
-          <article class="project-tile reveal"><a class="project-tile-media project-tile-media-contain media-white" href="projects/virtual-lab.html" aria-label="Explore Virtual Microcontroller Lab"><img src="assets/title_card/vlabs.jpg" alt="Virtual Labs initiative logo" loading="lazy"><span class="project-tile-number">09</span></a><div class="project-tile-body"><p>Embedded systems · Education</p><h3>Virtual Microcontroller Lab</h3><a href="projects/virtual-lab.html">Explore project <span>↗</span></a></div></article>
-          <article class="project-tile reveal"><a class="project-tile-media" href="projects/robocon-2022.html" aria-label="Explore ROBOCON 2022 Lagori Robots"><img src="assets/robocon2022.jpeg" alt="ROBOCON 2022 Lagori competition robot" loading="lazy"><span class="project-tile-number">10</span></a><div class="project-tile-body"><p>Competition robotics</p><h3>ROBOCON 2022 · Lagori Robots</h3><a href="projects/robocon-2022.html">Explore project <span>↗</span></a></div></article>
-          <article class="project-tile reveal"><a class="project-tile-media" href="projects/robocon-2023.html" aria-label="Explore ROBOCON 2023 Angkor Wat"><img src="assets/robocon2023.jpeg" alt="ROBOCON 2023 Angkor Wat competition robot" loading="lazy"><span class="project-tile-number">11</span></a><div class="project-tile-body"><p>Competition robotics · Leadership</p><h3>ROBOCON 2023 · Angkor Wat</h3><a href="projects/robocon-2023.html">Explore project <span>↗</span></a></div></article>
-          <article class="project-tile reveal"><a class="project-tile-media project-tile-media-contain media-navy" href="projects/hubot.html" aria-label="Explore HuBot 2.0"><img src="assets/title_card/Hubot_2.png" alt="HuBot 2.0 humanoid torso robot" loading="lazy"><span class="project-tile-number">12</span></a><div class="project-tile-body"><p>Research · Humanoid robotics</p><h3>HuBot 2.0</h3><a href="projects/hubot.html">Explore project <span>↗</span></a></div></article>
-          <article class="project-tile reveal"><a class="project-tile-media project-tile-media-contain media-white" href="projects/quadrotor-control.html" aria-label="Explore Quadrotor Control"><img src="assets/title_card/quadrotor-control.png" alt="Quadrotor model in a control simulation" loading="lazy"><span class="project-tile-number">13</span></a><div class="project-tile-body"><p>Aerial robotics · Controls</p><h3>Quadrotor Control</h3><a href="projects/quadrotor-control.html">Explore project <span>↗</span></a></div></article>
-          <article class="project-tile reveal"><a class="project-tile-media project-tile-media-contain media-navy" href="projects/openmanipulator.html" aria-label="Explore OpenManipulator Control"><img src="assets/title_card/open_manipulator.jpeg" alt="OpenManipulator robotic arm above a calibration board" loading="lazy"><span class="project-tile-number">14</span></a><div class="project-tile-body"><p>Robotics · Manipulation</p><h3>OpenManipulator Control</h3><a href="projects/openmanipulator.html">Explore project <span>↗</span></a></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section border-top archive-section" id="archive">
+      <div class="shell">
+        <div class="section-heading archive-heading reveal"><p class="kicker"><span></span> Projects by discipline</p><h2>Choose a role to explore relevant work.</h2></div>
+        <div class="project-role-tabs reveal" role="tablist" aria-label="Project disciplines">
+          <button class="active" type="button" role="tab" aria-selected="true" data-project-role="controls">Controls &amp; Autonomy</button>
+          <button type="button" role="tab" aria-selected="false" data-project-role="learning">Robot Learning</button>
+          <button type="button" role="tab" aria-selected="false" data-project-role="embedded">Embedded Systems</button>
+          <button type="button" role="tab" aria-selected="false" data-project-role="perception">Perception</button>
+        </div>
+        <div class="role-project-groups">
+          <section class="role-project-group reveal" data-role-panel="controls" aria-labelledby="controls-projects"><div class="role-project-heading"><p>01</p><div><h3 id="controls-projects">Controls &amp; autonomy</h3><p>Control design, planning, estimation, and autonomous robot behavior.</p></div></div><div class="role-project-list">
+            <a class="role-project" href="projects/indi-flight.html"><img src="assets/title_card/INDI.jpeg" alt=""><span><small>Flight controls</small><strong>INDI Flight Control &amp; Benchmarking</strong></span><i>→</i></a>
+            <a class="role-project" href="projects/payload-control.html"><img src="assets/title_card/Quadrotor_Payload_model.png" alt=""><span><small>Controls · RL</small><strong>Cable-Suspended Payload Control</strong></span><i>→</i></a>
+            <a class="role-project" href="projects/motion-planning.html"><img src="assets/title_card/TAMP.png" alt=""><span><small>Autonomy · Planning</small><strong>Task &amp; Motion Planning</strong></span><i>→</i></a>
+            <a class="role-project" href="projects/hubot-3.html"><b class="role-project-mark">H3</b><span><small>Humanoid robotics</small><strong>HuBot 3.0</strong></span><i>→</i></a>
+            <a class="role-project" href="projects/quadrotor-control.html"><img src="assets/title_card/quadrotor-control.png" alt=""><span><small>Aerial robotics</small><strong>Quadrotor Control</strong></span><i>→</i></a>
+            <a class="role-project" href="projects/openmanipulator.html"><img src="assets/title_card/open_manipulator.jpeg" alt=""><span><small>Manipulation</small><strong>OpenManipulator Control</strong></span><i>→</i></a>
+            <a class="role-project" href="projects/robocon-2022.html"><img src="assets/robocon2022.jpeg" alt=""><span><small>Competition robotics</small><strong>ROBOCON 2022</strong></span><i>→</i></a>
+            <a class="role-project" href="projects/robocon-2023.html"><img src="assets/robocon2023.jpeg" alt=""><span><small>Competition robotics</small><strong>ROBOCON 2023</strong></span><i>→</i></a>
+          </div></section>
+
+          <section class="role-project-group reveal" data-role-panel="learning" aria-labelledby="learning-projects" hidden><div class="role-project-heading"><p>02</p><div><h3 id="learning-projects">Robot learning</h3><p>Policy learning, reward design, simulation, and multi-agent systems.</p></div></div><div class="role-project-list">
+            <a class="role-project" href="projects/payload-control.html"><img src="assets/title_card/Quadrotor_Payload_model.png" alt=""><span><small>Reinforcement learning</small><strong>Cable-Suspended Payload Control</strong></span><i>→</i></a>
+            <a class="role-project" href="projects/hubot-3.html"><b class="role-project-mark">H3</b><span><small>Humanoid robotics · RL</small><strong>HuBot 3.0</strong></span><i>→</i></a>
+            <a class="role-project" href="projects/rocket-league.html"><b class="role-project-mark role-project-mark-sky">RL</b><span><small>Multi-agent learning</small><strong>Curriculum RL for Rocket League</strong></span><i>→</i></a>
+          </div></section>
+
+          <section class="role-project-group reveal" data-role-panel="perception" aria-labelledby="perception-projects" hidden><div class="role-project-heading"><p>04</p><div><h3 id="perception-projects">Perception &amp; estimation</h3><p>Visual sensing, state estimation, depth, and 3D reconstruction.</p></div></div><div class="role-project-list">
+            <a class="role-project" href="projects/einsteinvision.html"><img src="assets/title_card/Einstein_Vision.png" alt=""><span><small>3D perception</small><strong>EinsteinVision</strong></span><i>→</i></a>
+            <a class="role-project" href="projects/visual-inertial-odometry.html"><img src="assets/title_card/VIO.jpg" alt=""><span><small>State estimation</small><strong>Visual-Inertial Odometry</strong></span><i>→</i></a>
+            <a class="role-project" href="projects/reconstruction.html"><img src="assets/title_card/NERF.png" alt=""><span><small>3D reconstruction</small><strong>Structure-from-Motion &amp; NeRF</strong></span><i>→</i></a>
+            <a class="role-project" href="projects/payload-control.html"><img src="assets/title_card/Quadrotor_Payload_model.png" alt=""><span><small>Payload-state estimation</small><strong>Cable-Suspended Payload Control</strong></span><i>→</i></a>
+          </div></section>
+
+          <section class="role-project-group reveal" data-role-panel="embedded" aria-labelledby="embedded-projects" hidden><div class="role-project-heading"><p>03</p><div><h3 id="embedded-projects">Embedded systems</h3><p>Firmware, real-time control, communication, and hardware integration.</p></div></div><div class="role-project-list">
+            <a class="role-project" href="projects/indi-flight.html"><img src="assets/title_card/INDI.jpeg" alt=""><span><small>Flight firmware</small><strong>INDI Flight Control &amp; Benchmarking</strong></span><i>→</i></a>
+            <a class="role-project" href="projects/virtual-lab.html"><img src="assets/title_card/vlabs.jpg" alt=""><span><small>Microcontrollers</small><strong>Virtual Microcontroller Lab</strong></span><i>→</i></a>
+            <a class="role-project" href="projects/hubot.html"><img src="assets/title_card/Hubot_2.png" alt=""><span><small>Robot hardware</small><strong>HuBot 2.0</strong></span><i>→</i></a>
+            <a class="role-project" href="projects/openmanipulator.html"><img src="assets/title_card/open_manipulator.jpeg" alt=""><span><small>Actuator control</small><strong>OpenManipulator Control</strong></span><i>→</i></a>
+            <a class="role-project" href="projects/robocon-2022.html"><img src="assets/robocon2022.jpeg" alt=""><span><small>Robot integration</small><strong>ROBOCON 2022</strong></span><i>→</i></a>
+            <a class="role-project" href="projects/robocon-2023.html"><img src="assets/robocon2023.jpeg" alt=""><span><small>Robot integration</small><strong>ROBOCON 2023</strong></span><i>→</i></a>
+          </div></section>
         </div>
       </div>
     </section>
@@ -104,7 +124,7 @@
       <div class="shell">
         <div class="section-heading reveal"><p class="kicker"><span></span> Experience</p><h2>From research prototypes to production vehicles.</h2></div>
         <div class="work-list">
-          <article class="work-item reveal"><div class="work-meta"><p>Jan 2026 — Present</p><p>Worcester, MA</p></div><div class="work-copy"><h3>Graduate Research Volunteer</h3><h4>Aerial Controls & Perception Lab · WPI</h4><p>Developing autonomous control and onboard payload-state estimation for quadrotors carrying cable-suspended loads. Built a GPU-accelerated PPO training pipeline with 2,048 parallel environments at approximately 33K transitions/s—about 30× faster than the CPU pipeline—and integrated INDI flight control into Betaflight.</p></div><div class="experience-visual aerial-visual" aria-label="Animated quadrotor"><div class="drone hero-drone experience-drone" aria-hidden="true"><div class="quad-arm arm-nw"></div><div class="quad-arm arm-ne"></div><div class="quad-arm arm-sw"></div><div class="quad-arm arm-se"></div><div class="quad-rotor rotor-nw"><i></i><b></b></div><div class="quad-rotor rotor-ne"><i></i><b></b></div><div class="quad-rotor rotor-sw"><i></i><b></b></div><div class="quad-rotor rotor-se"><i></i><b></b></div><div class="drone-body"><span></span></div></div></div></article>
+          <article class="work-item reveal"><div class="work-meta"><p>Jan 2026 — Present</p><p>Worcester, MA</p></div><div class="work-copy"><h3>Graduate Research Volunteer</h3><h4>Aerial Controls &amp; Perception Lab · WPI</h4><p>Developing autonomous control and onboard payload-state estimation for quadrotors carrying cable-suspended loads. Built a GPU-accelerated PPO training pipeline with 2,048 parallel environments at approximately 33K transitions/s—about 30× faster than the CPU pipeline—and integrated INDI flight control into Betaflight.</p></div><div class="experience-visual aerial-visual" aria-label="Animated quadrotor"><div class="drone hero-drone experience-drone" aria-hidden="true"><div class="quad-arm arm-nw"></div><div class="quad-arm arm-ne"></div><div class="quad-arm arm-sw"></div><div class="quad-arm arm-se"></div><div class="quad-rotor rotor-nw"><i></i><b></b></div><div class="quad-rotor rotor-ne"><i></i><b></b></div><div class="quad-rotor rotor-sw"><i></i><b></b></div><div class="quad-rotor rotor-se"><i></i><b></b></div><div class="drone-body"><span></span></div></div></div></article>
           <article class="work-item reveal"><div class="work-meta"><p>Jan 2023 — Jun 2025</p><p>India</p></div><div class="work-copy"><h3>Embedded Software Engineer</h3><h4>BGAUSS Auto Pvt. Ltd.</h4><p>Developed production VCU and instrument-cluster firmware supporting approximately 2,000 electric two-wheelers per month. Built BLE OTA updates deployed across approximately 10,000 vehicles, reducing update time from two hours to five minutes and improving update success from about 90% to 97%. Reduced safety-feature false triggers from approximately 50% to 5% through vehicle-state gating and field validation.</p></div><div class="experience-visual firmware-visual" aria-label="Animated VCU controlling an electric two-wheeler"><div class="ecu-chip"><span>VCU</span><i></i><i></i><i></i><i></i></div><div class="vcu-link"><i></i><i></i><i></i></div><div class="electric-scooter"><div class="scooter-wheel rear"><i></i></div><div class="scooter-wheel front"><i></i></div><div class="scooter-frame"></div><div class="scooter-floor"><i></i></div><div class="scooter-seat"></div><div class="scooter-stem"></div><div class="scooter-handle"></div><div class="scooter-battery"><span></span></div><div class="scooter-motor"></div><div class="scooter-light"></div></div><b>CAN</b><b>BLE</b><b>OTA</b></div></article>
         </div>
       </div>
@@ -112,14 +132,14 @@
 
     <section class="section border-top" id="about">
       <div class="shell about-grid">
-        <div class="section-heading reveal"><p class="kicker"><span></span> About</p><h2>Software, hardware, and the control loop between them.</h2></div>
+        <div class="section-heading reveal"><p class="kicker"><span></span> About</p><h2>Robotics by profession. Curious by nature.</h2></div>
         <div class="about-copy reveal">
-          <p>I’m Anirudh, a Robotics Engineering graduate student at Worcester Polytechnic Institute. My background combines production embedded development with graduate robotics research.</p>
-          <p>I’m most interested in the hard boundary where software meets the physical world—sensors with noise, actuators with limits, and dynamic systems that refuse to behave like the simulation.</p>
+          <p>I’m Anirudh, a Robotics Engineering graduate student at Worcester Polytechnic Institute. Before graduate school, I worked as an Embedded Software Engineer at BGAUSS Auto, building production software for electric two-wheelers.</p>
+          <p>Outside robotics, I enjoy gaming, watching sci-fi thrillers, and photography. Games keep me curious about interactive worlds, sci-fi feeds my imagination, and photography gives me a reason to slow down and notice the details around me.</p>
           <div class="capabilities">
-            <div><span>01</span><h3>Robotics, controls &amp; RL</h3><p>ROS 2, planning, PID, INDI, NMPC, PPO, reward design</p></div>
-            <div><span>02</span><h3>Embedded firmware</h3><p>STM32, FreeRTOS, bootloaders, BLE, CAN, SPI, I²C</p></div>
-            <div><span>03</span><h3>Perception</h3><p>Stereo vision, VIO, depth estimation, point clouds, NeRF</p></div>
+            <div><span>01</span><h3>Gaming</h3><p>Interactive worlds, competition, and a good challenge.</p></div>
+            <div><span>02</span><h3>Sci-fi thrillers</h3><p>Big ideas, unfamiliar worlds, and stories that keep unfolding.</p></div>
+            <div><span>03</span><h3>Photography</h3><p>Landscapes, everyday moments, and details worth preserving.</p></div>
           </div>
         </div>
       </div>

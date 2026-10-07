@@ -3000,7 +3000,10 @@ h1 em {
 }
 .experience-visual {
   position: relative;
-  min-height: 170px;
+  width: min(100%, 280px);
+  min-height: 0;
+  aspect-ratio: 4 / 3;
+  justify-self: end;
   overflow: hidden;
   border: 1px solid rgba(52, 78, 65, 0.14);
   border-radius: 16px;
@@ -3218,7 +3221,9 @@ h1 em {
   }
   .experience-visual {
     grid-column: 1/-1;
-    min-height: 155px;
+    width: min(100%, 280px);
+    min-height: 0;
+    justify-self: end;
   }
 }
 @media (max-width: 820px) {
@@ -3240,6 +3245,7 @@ h1 em {
   }
   .experience-visual {
     grid-column: auto;
+    justify-self: center;
   }
 }
 
@@ -3325,11 +3331,11 @@ h1 em {
 @media (max-width: 560px) { .skills-slide { min-height: 500px; padding: 1.25rem; } .skill-grid { gap: 0.5rem; } .skill { min-height: 54px; padding: 0.6rem; font-size: 0.82rem; } .skill img, .skill i { flex-basis: 27px; width: 27px; height: 27px; margin-right: 0.55rem; } .skills-controls { justify-content: center; } }
 
 /* BGAUSS: VCU-controlled electric two-wheeler */
-.firmware-visual { min-height: 185px; }
-.firmware-visual .ecu-chip { left: 39px; top: 52px; width: 58px; height: 50px; translate: 0 0; animation: vcuWake 2.4s ease-in-out infinite; }
+.firmware-visual { min-height: 0; }
+.firmware-visual .ecu-chip { left: 10%; top: 52px; width: 58px; height: 50px; translate: 0 0; animation: vcuWake 2.4s ease-in-out infinite; }
 .firmware-visual .ecu-chip span { font-size: 0.56rem; }
 .firmware-visual .data-line { display: none; }
-.vcu-link { position: absolute; z-index: 2; left: 83px; top: 76px; width: 65px; height: 45px; border-top: 2px solid #b56345; border-right: 2px solid #b56345; border-radius: 0 13px 0 0; }
+.vcu-link { position: absolute; z-index: 2; left: calc(10% + 43px); right: 31%; top: 76px; width: auto; height: 45px; border-top: 2px solid #b56345; border-right: 2px solid #b56345; border-radius: 0 13px 0 0; }
 .vcu-link:before { content: "CTRL"; position: absolute; left: 13px; top: -17px; font: 400 0.42rem var(--mono); letter-spacing: 0.1em; color: var(--muted); }
 .vcu-link i { position: absolute; top: -4px; width: 7px; height: 7px; border-radius: 50%; background: var(--ember); box-shadow: 0 0 8px rgba(181, 99, 69, 0.6); animation: controlPacket 1.8s linear infinite; }
 .vcu-link i:nth-child(2) { animation-delay: 0.6s; }
@@ -3354,23 +3360,24 @@ h1 em {
 .firmware-visual > b:nth-of-type(1) { left: 13px; top: 128px; }
 .firmware-visual > b:nth-of-type(2) { left: 42px; right: auto; top: 128px; bottom: auto; }
 .firmware-visual > b:nth-of-type(3) { left: 70px; right: auto; top: 128px; }
-@keyframes controlPacket { from { left: 0; } to { left: 58px; } }
+@keyframes controlPacket { from { left: 0; } to { left: calc(100% - 7px); } }
 @keyframes wheelRoll { to { transform: rotate(360deg); } }
 @keyframes scooterIdle { 50% { transform: translateY(-2px); } }
 @keyframes batteryPulse { 50% { width: 11px; opacity: 0.55; } }
 @keyframes vcuWake { 50% { box-shadow: 8px 9px 0 rgba(35, 52, 46, 0.1), 0 0 16px rgba(181, 99, 69, 0.18); } }
-@media (max-width: 560px) { .firmware-visual .ecu-chip { left: 26px; } .electric-scooter { right: 8px; scale: 0.92; transform-origin: right bottom; } .vcu-link { left: 69px; width: 55px; } }
+@media (max-width: 560px) { .electric-scooter { right: 8px; scale: 0.92; transform-origin: right bottom; } }
 
 /* Homepage narrative: lead with proof of work, then show the supporting toolkit. */
 #main { display: flex; flex-direction: column; }
 #top { order: 0; }
-#projects { order: 1; }
-#skills { order: 2; border-top: 1px solid var(--line); }
-#work { order: 3; }
-#about { order: 4; }
-#main > .education { order: 5; }
-#recognition { order: 6; }
-#contact { order: 7; }
+#work { order: 1; }
+#projects { order: 2; }
+#skills { order: 3; border-top: 1px solid var(--line); }
+#archive { order: 4; }
+#about { order: 5; }
+#main > .education { order: 6; }
+#recognition { order: 7; }
+#contact { order: 8; }
 
 /* Full-width portfolio canvas and project gallery. */
 .shell {
@@ -3564,6 +3571,354 @@ h1 em {
   }
 
   .project-grid { grid-template-columns: 1fr; }
+}
+
+/* Featured work remains prominent; the archive is intentionally denser. */
+.featured-grid .project-tile-media { aspect-ratio: 16 / 10.5; }
+.archive-section { background: rgba(226, 229, 220, 0.34); }
+.archive-heading { margin-bottom: clamp(2rem, 4vw, 3.5rem); }
+.archive-grid { gap: clamp(0.9rem, 1.5vw, 1.35rem); }
+.archive-grid .project-tile { border-radius: 1rem; }
+.archive-grid .project-tile-media { aspect-ratio: 16 / 8.8; }
+.archive-grid .project-tile-body { padding: clamp(0.9rem, 1.35vw, 1.2rem); }
+.archive-grid .project-tile-body h3 { padding-right: 3.1rem; font-size: clamp(1.05rem, 1.35vw, 1.35rem); }
+.archive-grid .project-tile-body > p { font-size: 0.58rem; }
+.archive-grid .project-tile-body > a { right: clamp(0.9rem, 1.35vw, 1.2rem); bottom: clamp(0.9rem, 1.35vw, 1.2rem); width: 2.35rem; height: 2.35rem; }
+
+.role-project-groups {
+  display: grid;
+  gap: clamp(1.25rem, 2vw, 2rem);
+}
+
+.role-project-group {
+  padding: clamp(1.25rem, 2.5vw, 2rem);
+  border: 1px solid rgba(52, 78, 65, 0.15);
+  border-radius: 18px;
+  background: rgba(248, 246, 239, 0.58);
+}
+
+.role-project-heading {
+  display: grid;
+  grid-template-columns: 54px minmax(0, 1fr);
+  gap: 1rem;
+  align-items: start;
+  margin-bottom: 1.35rem;
+}
+
+.role-project-heading > p {
+  margin: 0.25rem 0 0;
+  color: var(--ember);
+  font: 400 0.68rem var(--mono);
+}
+
+.role-project-heading h3 {
+  margin: 0 0 0.25rem;
+  font-size: clamp(1.35rem, 2vw, 1.8rem);
+}
+
+.role-project-heading div > p {
+  margin: 0;
+  color: var(--dim);
+  font-size: 0.92rem;
+}
+
+.role-project-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.7rem;
+}
+
+.role-project {
+  display: grid;
+  grid-template-columns: 72px minmax(0, 1fr) 24px;
+  gap: 0.8rem;
+  align-items: center;
+  min-width: 0;
+  min-height: 76px;
+  padding: 0.45rem 0.65rem 0.45rem 0.45rem;
+  border: 1px solid rgba(52, 78, 65, 0.13);
+  border-radius: 11px;
+  background: rgba(255, 255, 255, 0.3);
+  color: var(--bone);
+  transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
+}
+
+.role-project:hover {
+  transform: translateY(-2px);
+  border-color: rgba(181, 99, 69, 0.38);
+  background: rgba(255, 255, 255, 0.55);
+}
+
+.role-project img,
+.role-project-mark {
+  width: 72px;
+  height: 60px;
+  border-radius: 7px;
+}
+
+.role-project img {
+  display: block;
+  object-fit: cover;
+  background: #d7ddd5;
+  filter: saturate(0.82) contrast(0.96);
+}
+
+.role-project-mark {
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg, #71816f, #304b3a);
+  color: #f4f1e8;
+  font: 500 1.3rem Georgia, serif;
+}
+
+.role-project-mark-sky { background: linear-gradient(135deg, #718a89, #344e54); }
+
+.role-project > span { min-width: 0; }
+.role-project small {
+  display: block;
+  margin-bottom: 0.28rem;
+  overflow: hidden;
+  color: var(--muted);
+  font: 400 0.56rem var(--mono);
+  letter-spacing: 0.06em;
+  text-overflow: ellipsis;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.role-project strong {
+  display: -webkit-box;
+  overflow: hidden;
+  font-size: 0.86rem;
+  font-weight: 600;
+  line-height: 1.25;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.role-project > i {
+  color: var(--ember);
+  font: 500 1rem var(--mono);
+  font-style: normal;
+  transition: transform 180ms ease;
+}
+
+.role-project:hover > i { transform: translateX(3px); }
+
+@media (max-width: 1100px) {
+  .role-project-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 700px) {
+  .role-project-heading { grid-template-columns: 36px minmax(0, 1fr); }
+  .role-project-list { grid-template-columns: 1fr; }
+}
+
+/* Selectable role views with full project cards */
+.project-role-tabs {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.65rem;
+  margin-bottom: clamp(1.25rem, 2.5vw, 2rem);
+  padding: 0.55rem;
+  border: 1px solid rgba(52, 78, 65, 0.15);
+  border-radius: 16px;
+  background: rgba(248, 246, 239, 0.56);
+}
+
+.project-role-tabs button {
+  min-height: 58px;
+  padding: 0.8rem 1rem;
+  border: 1px solid transparent;
+  border-radius: 11px;
+  background: transparent;
+  color: var(--muted);
+  font: 500 0.78rem/1.25 var(--mono);
+  cursor: pointer;
+  transition: color 180ms ease, border-color 180ms ease, background 180ms ease, transform 180ms ease;
+}
+
+.project-role-tabs button:hover {
+  color: var(--bone);
+  transform: translateY(-1px);
+}
+
+.project-role-tabs button.active {
+  border-color: rgba(181, 99, 69, 0.34);
+  background: var(--bone);
+  color: #f5f1e7;
+  box-shadow: 0 9px 24px rgba(31, 52, 38, 0.12);
+}
+
+.role-project-groups { display: block; }
+.role-project-group[hidden] { display: none !important; }
+
+.role-project-group {
+  padding: clamp(1.25rem, 2.5vw, 2rem);
+}
+
+.role-project-list {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(0.9rem, 1.5vw, 1.35rem);
+}
+
+.role-project {
+  position: relative;
+  display: block;
+  min-height: 0;
+  padding: 0;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  border-radius: 15px;
+  background: #31473d;
+  color: #f8f4e9;
+  text-decoration: none;
+  box-shadow: 0 10px 28px rgba(31, 52, 38, 0.06);
+}
+
+.role-project::after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(24, 48, 38, 0.2), rgba(20, 39, 31, 0.86));
+}
+
+.role-project img,
+.role-project-mark {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 0;
+}
+
+.role-project img {
+  object-fit: contain;
+  background: #dfe2dc;
+  filter: saturate(0.86) contrast(0.98);
+}
+
+.role-project-mark {
+  font-size: clamp(3rem, 5vw, 5rem);
+}
+
+.role-project > span {
+  position: absolute;
+  z-index: 2;
+  inset: 0;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  padding: clamp(1rem, 1.6vw, 1.4rem);
+}
+
+.role-project small {
+  grid-row: 1;
+  color: rgba(249, 247, 239, 0.76);
+  text-shadow: 0 1px 12px rgba(12, 27, 20, 0.45);
+}
+
+.role-project strong {
+  grid-row: 3;
+  padding-right: 3.25rem;
+  color: #f8f4e9;
+  font-size: clamp(1.05rem, 1.45vw, 1.45rem);
+  line-height: 1.12;
+  text-shadow: 0 2px 18px rgba(11, 25, 18, 0.56);
+}
+
+.role-project > i {
+  position: absolute;
+  z-index: 3;
+  right: clamp(1rem, 1.6vw, 1.4rem);
+  bottom: clamp(1rem, 1.6vw, 1.4rem);
+  display: grid;
+  place-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 1px solid rgba(248, 244, 233, 0.54);
+  border-radius: 50%;
+  background: rgba(248, 244, 233, 0.14);
+  color: #f8f4e9;
+  backdrop-filter: blur(8px);
+}
+
+.role-project:hover { transform: translateY(-4px); }
+.role-project:hover > i { transform: translateX(2px); }
+
+@media (max-width: 1100px) {
+  .role-project-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 760px) {
+  .project-role-tabs {
+    display: flex;
+    overflow-x: auto;
+    scrollbar-width: thin;
+  }
+
+  .project-role-tabs button { flex: 0 0 auto; min-height: 50px; }
+  .role-project-list { grid-template-columns: 1fr; }
+}
+
+/* Compact, recruiter-friendly skills overview */
+.essential-skills {
+  overflow: hidden;
+  border: 1px solid rgba(52, 78, 65, 0.16);
+  border-radius: 18px;
+  background: rgba(248, 246, 239, 0.58);
+}
+
+.skill-cluster {
+  display: grid;
+  grid-template-columns: minmax(190px, 0.32fr) 1fr;
+  gap: clamp(1rem, 3vw, 3rem);
+  align-items: center;
+  padding: clamp(1rem, 2vw, 1.45rem) clamp(1.15rem, 2.5vw, 2rem);
+  border-top: 1px solid rgba(52, 78, 65, 0.12);
+}
+
+.skill-cluster:first-child { border-top: 0; }
+
+.skill-cluster h3 {
+  margin: 0;
+  color: var(--bone);
+  font-size: 0.98rem;
+  font-weight: 600;
+}
+
+.skill-cluster > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
+.skill-cluster span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 34px;
+  padding: 0.45rem 0.75rem;
+  border: 1px solid rgba(58, 82, 70, 0.16);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.34);
+  color: var(--dim);
+  font: 400 0.76rem/1.2 var(--mono);
+  white-space: nowrap;
+}
+
+.skill-cluster span::before {
+  content: "+";
+  margin-right: 0.42rem;
+  color: var(--ember);
+}
+
+@media (max-width: 700px) {
+  .skill-cluster {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .skill-cluster span { font-size: 0.7rem; }
 }
 
 /* Tinted photographic hero */
