@@ -1,357 +1,177 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Anirudh Nallawar | Robotics & Embedded Systems</title>
-    <meta
-      name="description"
-      content="Portfolio of Anirudh Nallawar — embedded systems, robotics software, controls, and autonomous systems."
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="styles.css" />
-    <script defer src="photography-manifest.js"></script>
-    <script defer src="script.js"></script>
-  </head>
-  <body>
-    <div class="bg-grid"></div>
-    <header class="site-header">
-      <div class="container nav">
-        <a class="brand" href="#home">AN</a>
-        <nav>
-          <a href="#about">About</a>
-          <a href="#experience">Experience</a>
-          <a href="#projects">Projects</a>
-          <a href="#hobbies">Beyond Engineering</a>
-          <a href="#contact">Contact</a>
-        </nav>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b0d0f">
+  <meta name="description" content="Anirudh Nallawar is a robotics and embedded systems engineer building reliable software for machines that move.">
+  <title>Anirudh Nallawar · Robotics Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=20261006">
+  <script defer src="photography-manifest.js"></script>
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <nav class="shell nav" aria-label="Primary navigation">
+      <a class="wordmark" href="#top" aria-label="Anirudh Nallawar, home">Anirudh <span>Nallawar</span></a>
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="nav-links">Menu</button>
+      <div class="nav-links" id="nav-links">
+        <a href="#projects"><small>01</small> Projects</a>
+        <a href="#skills"><small>02</small> Skills</a>
+        <a href="#work"><small>03</small> Work</a>
+        <a href="#about"><small>04</small> About</a>
+        <a href="#photography"><small>05</small> Photos</a>
+        <a href="cv.html" target="_blank" rel="noreferrer">CV ↗</a>
+        <a class="nav-cta" href="#contact">Get in touch</a>
       </div>
-    </header>
+    </nav>
+  </header>
 
-    <main id="home">
-      <section class="hero container section">
-        <div class="hero-copy">
-          <p class="eyebrow">Master’s Student • WPI • Robotics + Embedded Systems</p>
-          <h1>
-            Building reliable <span>embedded systems</span>,
-            <span>robotics software</span>, and
-            <span>autonomous control pipelines</span>.
-          </h1>
-          <p class="lede">
-            I’m Anirudh Nallawar, a Mechatronics, Robotics, and Automation Engineering
-            graduate student at Worcester Polytechnic Institute with prior industry
-            experience in EV firmware, controls, robotics, and autonomous systems.
-          </p>
-          <div class="hero-actions">
-            <a class="button primary" href="#projects">View Projects</a>
-            <a class="button ghost" href="mailto:anirudhnallawar02@gmail.com">Get in Touch</a>
-            <a class="button ghost" href="./Anirudh_Nallawar_Robotics_Resume.pdf" target="_blank" rel="noreferrer">Resume</a>
+  <main id="main">
+    <section class="hero shell" id="top">
+      <div class="hero-copy reveal">
+        <p class="status"><i></i> Open to robotics and embedded systems roles</p>
+        <h1>I build the software that makes <em>machines move.</em></h1>
+        <p class="hero-intro">I’m a robotics engineer and WPI graduate student building autonomous flight controllers, reinforcement-learning systems, and production embedded firmware. My work connects robot software to demanding real-world hardware.</p>
+        <div class="actions">
+          <a class="button primary" href="#projects">See the work <span>→</span></a>
+          <a class="text-button" href="cv.html" target="_blank" rel="noreferrer">CV ↗</a>
+        </div>
+        <div class="focus-line" aria-label="Areas of expertise">
+          <span>Robotics software &amp; controls</span><span>Robot learning</span><span>Embedded firmware</span><span>Perception</span>
+        </div>
+      </div>
+      <div class="hero-visual reveal" aria-label="Portrait of Anirudh Nallawar">
+        <div class="profile-circle">
+          <img src="assets/profile.jpeg" alt="Anirudh Nallawar in Boulder, Colorado">
+        </div>
+      </div>
+    </section>
+
+    <section class="section skills-section" id="skills">
+      <div class="shell">
+        <div class="skills-heading reveal"><div><p class="kicker"><span></span> Technical toolkit</p><h2>Controls, learning, and firmware for physical systems.</h2></div><p>Organized around the work I do: robotics software and controls, robot learning, embedded firmware, and perception.</p></div>
+        <div class="skill-tabs reveal" role="tablist" aria-label="Skill categories">
+          <button class="active" type="button" role="tab" aria-selected="true" data-skill-slide="0">Robotics &amp; controls</button>
+          <button type="button" role="tab" aria-selected="false" data-skill-slide="1">Robot learning</button>
+          <button type="button" role="tab" aria-selected="false" data-skill-slide="2">Embedded firmware</button>
+          <button type="button" role="tab" aria-selected="false" data-skill-slide="3">Programming</button>
+          <button type="button" role="tab" aria-selected="false" data-skill-slide="4">Perception</button>
+          <button type="button" role="tab" aria-selected="false" data-skill-slide="5">Simulation</button>
+          <button type="button" role="tab" aria-selected="false" data-skill-slide="6">Automotive</button>
+          <button type="button" role="tab" aria-selected="false" data-skill-slide="7">Tools &amp; hardware</button></div>
+        <div class="skills-window reveal">
+          <div class="skills-track" id="skills-track">
+            <article class="skills-slide" aria-label="Robotics and control skills"><div class="slide-index">01 / 08</div><div><h3>Robotics software &amp; controls</h3><p>Planning, estimation, and feedback control for robots operating under real physical constraints.</p><div class="skill-grid"><span class="skill"><img src="assets/skills/ros.svg" alt="">ROS 2</span><span class="skill"><i>PI</i>PID</span><span class="skill"><i>IN</i>INDI</span><span class="skill"><i>LQ</i>LQR</span><span class="skill"><i>NM</i>NMPC</span><span class="skill"><i>↝</i>Trajectory Generation</span><span class="skill"><i>KD</i>Kinematics &amp; Dynamics</span><span class="skill"><i>TP</i>Task &amp; Motion Planning</span><span class="skill"><i>GC</i>Geometric Control</span><span class="skill"><i>SM</i>State Machines</span></div></div></article>
+            <article class="skills-slide" aria-label="Robot learning skills"><div class="slide-index">02 / 08</div><div><h3>Robot learning</h3><p>Policy training and evaluation for dynamic robotic systems and sim-to-real deployment.</p><div class="skill-grid"><span class="skill"><i>RL</i>Reinforcement Learning</span><span class="skill"><i>PP</i>PPO</span><span class="skill"><i>RS</i>Reward Shaping</span><span class="skill"><i>CL</i>Curriculum Learning</span><span class="skill"><i>DR</i>Domain Randomization</span><span class="skill"><i>PE</i>Policy Evaluation</span><span class="skill"><i>PT</i>PyTorch</span></div></div></article>
+            <article class="skills-slide" aria-label="Embedded firmware skills"><div class="slide-index">03 / 08</div><div><h3>Embedded firmware</h3><p>Production firmware, MCU bring-up, communication buses, and reliable field updates.</p><div class="skill-grid"><span class="skill"><img src="assets/skills/stm32.svg" alt="">STM32</span><span class="skill"><i>RT</i>FreeRTOS</span><span class="skill"><i>BL</i>Bootloaders</span><span class="skill"><i>DD</i>Device Drivers</span><span class="skill"><i>↑</i>OTA Updates</span><span class="skill"><i>CA</i>CAN</span><span class="skill"><i>SP</i>SPI</span><span class="skill"><i>I²</i>I²C</span><span class="skill"><i>UA</i>UART</span><span class="skill"><img src="assets/skills/bluetooth.svg" alt="">BLE</span><span class="skill"><i>OS</i>OctoSPI</span></div></div></article>
+            <article class="skills-slide" aria-label="Programming skills"><div class="slide-index">04 / 08</div><div><h3>Programming &amp; platforms</h3><p>The languages and operating environments behind my robotics and embedded work.</p><div class="skill-grid"><span class="skill"><img src="assets/skills/c.svg" alt="">C</span><span class="skill"><img src="assets/skills/cplusplus.svg" alt="">C++</span><span class="skill"><i>EC</i>Embedded C</span><span class="skill"><img src="assets/skills/python.svg" alt="">Python</span><span class="skill"><i>ML</i>MATLAB</span><span class="skill"><img src="assets/skills/linux.svg" alt="">Linux</span></div></div></article>
+            <article class="skills-slide" aria-label="Perception skills"><div class="slide-index">05 / 08</div><div><h3>Perception</h3><p>Estimating motion, depth, and scene structure from cameras and inertial sensors.</p><div class="skill-grid"><span class="skill"><i>CV</i>Computer Vision</span><span class="skill"><i>SV</i>Stereo Vision</span><span class="skill"><i>VI</i>Visual-Inertial Odometry</span><span class="skill"><i>EK</i>EKF / MSCKF</span><span class="skill"><i>DE</i>Depth Estimation</span><span class="skill"><i>PC</i>Point Clouds</span><span class="skill"><i>SF</i>Structure-from-Motion</span><span class="skill"><i>NF</i>NeRF</span><span class="skill"><i>DL</i>Deep Learning</span></div></div></article>
+            <article class="skills-slide" aria-label="Simulation skills"><div class="slide-index">06 / 08</div><div><h3>Simulation &amp; planning</h3><p>Physics environments and planning tools used to train and validate systems before hardware.</p><div class="skill-grid"><span class="skill"><i>MJ</i>MuJoCo</span><span class="skill"><i>MW</i>MuJoCo Warp</span><span class="skill"><i>GN</i>Genesis</span><span class="skill"><i>GZ</i>Gazebo</span><span class="skill"><i>OM</i>OMPL</span><span class="skill"><i>SL</i>Simulink</span><span class="skill"><i>PR</i>Proteus</span></div></div></article>
+            <article class="skills-slide" aria-label="Automotive and EV skills"><div class="slide-index">07 / 08</div><div><h3>Automotive &amp; EV</h3><p>Vehicle-level control, rider interfaces, charging, and functional safety features.</p><div class="skill-grid"><span class="skill"><i>VC</i>VCU</span><span class="skill"><i>IC</i>Instrument Cluster</span><span class="skill"><i>EV</i>EV Charger Control</span><span class="skill"><i>CC</i>CC–CV</span><span class="skill"><i>VS</i>Vehicle Safety Systems</span></div></div></article>
+            <article class="skills-slide" aria-label="Development tools and hardware design"><div class="slide-index">08 / 08</div><div><h3>Tools &amp; hardware</h3><p>The toolchain and hardware literacy used to ship, debug, and validate complete systems.</p><div class="skill-grid"><span class="skill"><img src="assets/skills/git.svg" alt="">Git</span><span class="skill"><img src="assets/skills/docker.svg" alt="">Docker</span><span class="skill"><i>SG</i>Singularity</span><span class="skill"><i>CU</i>STM32CubeIDE</span><span class="skill"><i>KE</i>Keil</span><span class="skill"><i>VS</i>VS Code</span><span class="skill"><i>++</i>CANdb++</span><span class="skill"><i>SC</i>Schematic Capture</span><span class="skill"><i>PC</i>PCB Design</span><span class="skill"><i>AL</i>Altium Designer</span></div></div></article>
           </div>
-          <ul class="quick-facts">
-            <li>Embedded Firmware</li>
-            <li>ROS 2 & Motion Planning</li>
-            <li>Controls, Estimation, Perception</li>
-          </ul>
+          <div class="skills-controls"><button id="skills-prev" type="button" aria-label="Previous skill category">←</button><span id="skills-position">01 — 08</span><button id="skills-next" type="button" aria-label="Next skill category">→</button></div>
         </div>
-        <aside class="hero-card glass-card hero-profile">
-          <img src="assets/profile.jpeg" alt="Portrait of Anirudh Nallawar" class="profile-image" />
-          <div class="hero-profile-copy">
-            <p class="card-label">Currently focused on</p>
-            <h2>Internship opportunities</h2>
-            <p>
-              Embedded Software • Robotics Software • Controls • Autonomous Systems
-            </p>
-            <div class="stat-list">
-              <div>
-                <strong>2+ years</strong>
-                <span>embedded product development</span>
-              </div>
-              <div>
-                <strong>WPI</strong>
-                <span>M.S. in Mechatronics, Robotics & Automation</span>
-              </div>
-              <div>
-                <strong>Research + Industry</strong>
-                <span>firmware, simulation, perception, control</span>
-              </div>
-            </div>
-          </div>
-        </aside>
-      </section>
+      </div>
+    </section>
 
-      <section id="about" class="container section two-col">
-        <div>
-          <p class="section-tag">About</p>
-          <h2>Engineer at the intersection of software, hardware, and control.</h2>
-        </div>
-        <div class="about-copy">
-          <p>
-            My background combines production embedded development with graduate-level
-            robotics research. At BGAUSS Auto, I worked on firmware for an electric
-            two-wheeler platform, from subsystem bring-up through bootloaders, BLE,
-            and safety features. At WPI, I’m working on aerial controls and perception,
-            motion planning, and vision-based sensing.
-          </p>
-          <p>
-            I’m especially interested in roles where firmware meets autonomy — the
-            kind of work where robust software has to interact with real sensors,
-            actuators, and dynamic systems.
-          </p>
-        </div>
-      </section>
-
-      <section class="container section">
-        <p class="section-tag">Core Skills</p>
-        <div class="skills-grid">
-          <article class="glass-card skill-card">
-            <h3>Embedded Systems</h3>
-            <p>STM32, FreeRTOS, bootloaders, OTA updates, board bring-up, device drivers, BLE, UART, SPI, I2C, CAN.</p>
+    <section class="section border-top" id="projects">
+      <div class="shell">
+        <div class="section-heading reveal"><p class="kicker"><span></span> Selected work</p><h2>Systems built to leave the screen.</h2></div>
+        <div class="project-list">
+          <article class="project reveal">
+            <a class="project-image" href="projects/indi-flight.html"><img src="assets/indiflight/demo-poster.jpg" alt="INDI flight-control test in WPI's indoor flight space"><span>View case study ↗</span></a>
+            <div class="project-copy" id="project-flight"><p class="project-number">01 / FLIGHT CONTROLS</p><h3>INDI Flight Control &amp; Benchmarking</h3><p>Ported TU Delft’s INDI controller to Betaflight 4.5, integrated Jetson communication, reconciled frame conventions, and validated both command modes across more than 100 real-world flights at up to 12 m/s.</p><ul><li>Betaflight 4.5</li><li>INDI</li><li>DQ-NMPC</li></ul><a class="learn-link" href="projects/indi-flight.html">Learn more <span>→</span></a></div>
           </article>
-          <article class="glass-card skill-card">
-            <h3>Robotics & Controls</h3>
-            <p>ROS 2, kinematics, motion planning, PD/PID/PI, LQR, INDI, trajectory generation, state machines.</p>
+          <article class="project reverse reveal">
+            <a class="project-image" href="projects/payload-control.html"><img src="assets/payload/poster.jpg" alt="Cable-suspended payload control simulation"><span>View case study ↗</span></a>
+            <div class="project-copy" id="project-payload"><p class="project-number">02 / ROBOT LEARNING</p><h3>Cable-Suspended Payload Control</h3><p>Built a complete MuJoCo/MJLab training environment for payload transport, modeled tendon constraints, validated the low-level PID controller, and retuned PPO rewards for a heavier 1 kg quadrotor carrying up to 200 g.</p><ul><li>MuJoCo</li><li>MJLab</li><li>PPO</li></ul><a class="learn-link" href="projects/payload-control.html">Learn more <span>→</span></a></div>
           </article>
-          <article class="glass-card skill-card">
-            <h3>Perception & Simulation</h3>
-            <p>Stereo vision, disparity mapping, depth estimation, point clouds, Gazebo, Genesis, OMPL.</p>
-          </article>
-          <article class="glass-card skill-card">
-            <h3>Development Tools</h3>
-            <p>C, C++, Python, MATLAB, Linux, Git, Docker, STM32CubeIDE, Keil, TouchGFX, Altium Designer.</p>
+          <article class="project reveal">
+            <a class="project-image" href="projects/motion-planning.html"><img src="assets/motion-planning.png" alt="Task and motion planning simulation"><span>View case study ↗</span></a>
+            <div class="project-copy" id="project-plan"><p class="project-number">03 / ROBOTICS SOFTWARE</p><h3>Task &amp; Motion Planning Framework</h3><p>An end-to-end manipulation system that combines PDDL task planning with collision-free OMPL trajectories to build block structures in the Genesis simulator.</p><ul><li>Genesis</li><li>OMPL</li><li>PDDL</li></ul><a class="learn-link" href="projects/motion-planning.html">Learn more <span>→</span></a></div>
           </article>
         </div>
-      </section>
+        <div class="more-projects reveal">
+          <p class="kicker"><span></span> Research & more builds</p><a href="projects/hubot-3.html"><b>HuBot 3.0</b><span>MuJoCo · LQR · PPO</span><i>↗</i></a>
+<a href="projects/rocket-league.html"><b>Curriculum RL for Rocket League</b><span>PPO · Curriculum Learning</span><i>↗</i></a>
+<a href="projects/einsteinvision.html"><b>EinsteinVision</b><span>YOLO · UniDepth · DINOv2</span><i>↗</i></a>
+<a href="projects/visual-inertial-odometry.html"><b>Classical & Learned Visual-Inertial Odometry</b><span>Stereo MSCKF · EKF · Deep VIO</span><i>↗</i></a>
+<a href="projects/reconstruction.html"><b>Structure-from-Motion & NeRF</b><span>RANSAC · Bundle Adjustment · NeRF</span><i>↗</i></a>
 
-      <section id="experience" class="container section">
-        <div class="section-head">
-          <div>
-            <p class="section-tag">Experience</p>
-            <h2>Research and product development</h2>
-          </div>
+          <a href="projects/virtual-lab.html"><b>Virtual Microcontroller Lab</b><span>Embedded education platform</span><i>↗</i></a>
+          <a href="projects/robocon-2022.html"><b>ROBOCON 2022 · Lagori Robots</b><span>35 kg semi-autonomous competition robot</span><i>↗</i></a>
+          <a href="projects/robocon-2023.html"><b>ROBOCON 2023 · Angkor Wat</b><span>National fifth-place competition robots</span><i>↗</i></a>
+          <a href="projects/hubot.html"><b>Hubot 2.0</b><span>Self-balancing humanoid torso research</span><i>↗</i></a>
         </div>
+      </div>
+    </section>
 
-        <div class="timeline">
-          <article class="timeline-item glass-card">
-            <div class="timeline-meta">
-              <span>Jan 2026 – Present</span>
-              <span>Worcester, MA</span>
-            </div>
-            <h3>Graduate Researcher · Aerial Controls and Perception Lab, WPI</h3>
-            <ul>
-              <li>Implementing an INDI controller in Betaflight to improve quadrotor robustness under payload disturbances.</li>
-              <li>Studying controller and estimator interaction during aggressive maneuvers and disturbance rejection.</li>
-            </ul>
-          </article>
-
-          <article class="timeline-item glass-card">
-            <div class="timeline-meta">
-              <span>Oct 2025 – Present</span>
-              <span>Worcester, MA</span>
-            </div>
-            <h3>Graduate Research Volunteer · Autonomous Vehicle and Mobility Institute, WPI</h3>
-            <ul>
-              <li>Designing a stereo-vision pipeline for non-contact tire deflation detection using embedded in-wheel cameras.</li>
-              <li>Computing disparity maps and analyzing depth and geometry changes to infer tire deformation.</li>
-            </ul>
-          </article>
-
-          <article class="timeline-item glass-card">
-            <div class="timeline-meta">
-              <span>Jan 2023 – Jun 2025</span>
-              <span>India</span>
-            </div>
-            <h3>Embedded Software Engineer · BGAUSS Auto Pvt. Ltd.</h3>
-            <ul>
-              <li>Developed firmware for electric two-wheeler Vehicle Control Unit and Instrument Cluster from prototype to production.</li>
-              <li>Built low-level integrations for IMU, BLE, external flash, display subsystems, and power regulation.</li>
-              <li>Implemented a custom OTA bootloader over BLE, reducing firmware update time from ~2 hours to ~5 minutes.</li>
-              <li>Developed safety features including Hill Hold, Rollover Detection, and Anti-Theft using IMU data.</li>
-            </ul>
-          </article>
+    <section class="section border-top" id="work">
+      <div class="shell">
+        <div class="section-heading reveal"><p class="kicker"><span></span> Experience</p><h2>From research prototypes to production vehicles.</h2></div>
+        <div class="work-list">
+          <article class="work-item reveal"><div class="work-meta"><p>Jan 2026 — Present</p><p>Worcester, MA</p></div><div class="work-copy"><h3>Graduate Research Volunteer</h3><h4>Aerial Controls & Perception Lab · WPI</h4><p>Developing autonomous control and onboard payload-state estimation for quadrotors carrying cable-suspended loads. Built a GPU-accelerated PPO training pipeline with 2,048 parallel environments at approximately 33K transitions/s—about 30× faster than the CPU pipeline—and integrated INDI flight control into Betaflight.</p></div><div class="experience-visual aerial-visual" aria-label="Animated quadrotor"><div class="drone hero-drone experience-drone" aria-hidden="true"><div class="quad-arm arm-nw"></div><div class="quad-arm arm-ne"></div><div class="quad-arm arm-sw"></div><div class="quad-arm arm-se"></div><div class="quad-rotor rotor-nw"><i></i><b></b></div><div class="quad-rotor rotor-ne"><i></i><b></b></div><div class="quad-rotor rotor-sw"><i></i><b></b></div><div class="quad-rotor rotor-se"><i></i><b></b></div><div class="drone-body"><span></span></div></div></div></article>
+          <article class="work-item reveal"><div class="work-meta"><p>Jan 2023 — Jun 2025</p><p>India</p></div><div class="work-copy"><h3>Embedded Software Engineer</h3><h4>BGAUSS Auto Pvt. Ltd.</h4><p>Developed production VCU and instrument-cluster firmware supporting approximately 2,000 electric two-wheelers per month. Built BLE OTA updates deployed across approximately 10,000 vehicles, reducing update time from two hours to five minutes and improving update success from about 90% to 97%. Reduced safety-feature false triggers from approximately 50% to 5% through vehicle-state gating and field validation.</p></div><div class="experience-visual firmware-visual" aria-label="Animated VCU controlling an electric two-wheeler"><div class="ecu-chip"><span>VCU</span><i></i><i></i><i></i><i></i></div><div class="vcu-link"><i></i><i></i><i></i></div><div class="electric-scooter"><div class="scooter-wheel rear"><i></i></div><div class="scooter-wheel front"><i></i></div><div class="scooter-frame"></div><div class="scooter-floor"><i></i></div><div class="scooter-seat"></div><div class="scooter-stem"></div><div class="scooter-handle"></div><div class="scooter-battery"><span></span></div><div class="scooter-motor"></div><div class="scooter-light"></div></div><b>CAN</b><b>BLE</b><b>OTA</b></div></article>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section id="projects" class="container section">
-        <div class="section-head">
-          <div>
-            <p class="section-tag">Selected Projects</p>
-            <h2>Systems I’ve built</h2>
+    <section class="section border-top" id="about">
+      <div class="shell about-grid">
+        <div class="section-heading reveal"><p class="kicker"><span></span> About</p><h2>Software, hardware, and the control loop between them.</h2></div>
+        <div class="about-copy reveal">
+          <p>I’m Anirudh, a Robotics Engineering graduate student at Worcester Polytechnic Institute. My background combines production embedded development with graduate robotics research.</p>
+          <p>I’m most interested in the hard boundary where software meets the physical world—sensors with noise, actuators with limits, and dynamic systems that refuse to behave like the simulation.</p>
+          <div class="capabilities">
+            <div><span>01</span><h3>Robotics, controls &amp; RL</h3><p>ROS 2, planning, PID, INDI, NMPC, PPO, reward design</p></div>
+            <div><span>02</span><h3>Embedded firmware</h3><p>STM32, FreeRTOS, bootloaders, BLE, CAN, SPI, I²C</p></div>
+            <div><span>03</span><h3>Perception</h3><p>Stereo vision, VIO, depth estimation, point clouds, NeRF</p></div>
           </div>
         </div>
+      </div>
+    </section>
 
-        <div class="projects-grid visual-grid">
-          <article class="project-card glass-card featured-project">
-            <img src="assets/openmanipulator.jpeg" alt="OpenManipulator robotics project" class="project-image" />
-            <div class="project-body">
-              <h3>OpenManipulator-X Control Pipeline</h3>
-              <p>
-                Built a full ROS 2 kinematics and control stack for a 4-DOF robotic arm,
-                including FK, IK, Jacobian-based velocity kinematics, and Cartesian path control.
-              </p>
-            </div>
-          </article>
+    <section class="section border-top education">
+      <div class="shell">
+        <p class="kicker reveal"><span></span> Education</p>
+        <div class="education-row reveal"><p>Aug 2025 — May 2027 (expected)</p><div><h3>Worcester Polytechnic Institute</h3><p>M.S. Robotics Engineering · GPA 4.0/4.0</p></div></div>
+        <div class="education-row reveal"><p>Aug 2019 — May 2023</p><div><h3>College of Engineering Pune</h3><p>B.Tech Instrumentation & Control Engineering · Minor in Computer Science · GPA 8.42/10</p></div></div>
+      </div>
+    </section>
 
-          <article class="project-card glass-card featured-project">
-            <img src="assets/quadrotor.png" alt="Quadrotor control trajectory plot" class="project-image" />
-            <div class="project-body">
-              <h3>Quadrotor Control & Trajectory Tracking</h3>
-              <p>
-                Designed PD and LQR-based control pipelines with polynomial trajectories,
-                simulation analysis, and hardware-oriented evaluation of tracking performance.
-              </p>
-            </div>
-          </article>
+    <section class="section border-top" id="recognition"><div class="shell"><div class="section-heading reveal"><p class="kicker"><span></span> Recognition & leadership</p><h2>Building robots. Leading teams.</h2></div><div class="work-list">
+<article class="work-item reveal"><div class="work-meta"><p>Jun 2022 — Jun 2023</p></div><div class="work-copy"><h3>Team Captain & Secretary</h3><h4>Robot Study Circle · COEP</h4><p>Led a 30-member multidisciplinary team and development of 10+ robotic systems and prototypes. Coordinated technical priorities within an approximately ₹12 lakh annual club budget and secured approximately ₹1 lakh in external sponsorship. The ROBOCON 2023 team placed fifth nationally among 50+ teams.</p></div></article>
+<article class="work-item reveal"><div class="work-meta"><p>Jul 2024</p></div><div class="work-copy"><h3>Published patent application</h3><h4>Instrument Cluster for Use with Vehicle</h4><p>Application no. 202421047935.</p></div></article>
+<article class="work-item reveal"><div class="work-meta"><p>Dec 2021</p></div><div class="work-copy"><h3>Robotics publication · ARMS’21</h3><p>Development of Robotic Arm Manipulator mounted on Self Balancing Two-Wheeled Mobile Robot.</p></div></article>
+<article class="work-item reveal"><div class="work-meta"><p>2021 — 2023</p></div><div class="work-copy"><h3>Awards</h3><p>Second place, MATLAB Modelling Award at ROBOCON 2023; Dedication and Invaluable Contribution Award, COEP (2023); second place, Virtual Robotics at MindSpark’21.</p></div></article>
+</div></div></section>
+    <section class="section border-top beyond" id="photography">
+      <div class="shell">
+        <div class="photo-heading reveal"><div><p class="kicker"><span></span> Photography</p><h2>Frames from outside the lab.</h2></div><p>Photography trains the same instinct I bring to engineering: notice the detail, understand the motion, and frame the problem well. A new edit is selected on every visit.</p></div>
+        <div id="photo-collage" class="photo-gallery reveal" aria-label="A selection of Anirudh's photography"></div>
+        <div class="photo-footer reveal"><span>Travel · campus · robotics · everyday scenes</span><button id="reshuffle-photos" type="button">Shuffle the gallery ↻</button></div>
+      </div>
+    </section>
 
-          <article class="project-card glass-card featured-project">
-            <img src="assets/motion-planning.png" alt="Task and motion planning result" class="project-image" />
-            <div class="project-body">
-              <h3>Task and Motion Planning Framework</h3>
-              <p>
-                Integrated PDDL-based task planning with OMPL motion planning and recovery logic
-                for autonomous block manipulation in simulation.
-              </p>
-            </div>
-          </article>
+    <section class="contact border-top" id="contact">
+      <div class="shell reveal">
+        <p class="kicker"><span></span> Start a conversation</p>
+        <h2>Have a machine worth making smarter?</h2>
+        <p>I’m looking for opportunities in embedded software, robotics, controls, and autonomous systems.</p>
+        <a class="button primary" href="mailto:anirudhnallawar02@gmail.com">anirudhnallawar02@gmail.com <span>↗</span></a>
+      </div>
+    </section>
+  </main>
 
-          <article class="project-card glass-card featured-project">
-            <img src="assets/virtual-lab.png" alt="Virtual microcontroller lab interface" class="project-image" />
-            <div class="project-body">
-              <h3>Virtual Learning Framework for Microcontrollers</h3>
-              <p>
-                Developed a web-based virtual lab for PIC microcontrollers covering clock setup,
-                GPIO, PWM, and ADC experiments for embedded systems education.
-              </p>
-            </div>
-          </article>
-
-          <article class="project-card glass-card featured-project">
-            <img src="assets/robocon2022.jpeg" alt="ROBOCON 2022 robot" class="project-image" />
-            <div class="project-body">
-              <h3>Lagori Playing Robots · ROBOCON 2022</h3>
-              <p>
-                Automated a 4-omniwheel drive system, designed a 3-DOF gripper arm, and contributed
-                to custom PCB-based control hardware for a 35 kg semi-autonomous competition robot.
-              </p>
-              <a class="text-link" href="https://www.youtube.com/watch?v=Kln2yU7G_Gs" target="_blank" rel="noreferrer">Watch project video ↗</a>
-            </div>
-          </article>
-
-          <article class="project-card glass-card featured-project">
-            <img src="assets/robocon2023.jpeg" alt="ROBOCON 2023 competition robot" class="project-image" />
-            <div class="project-body">
-              <h3>Casting Flowers Over Angkor Wat · ROBOCON 2023</h3>
-              <p>
-                Designed control algorithms and embedded firmware for two competition robots and helped lead the team to 5th place nationally.
-              </p>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <section class="container section">
-        <div class="section-head">
-          <div>
-            <p class="section-tag">Research & Publication</p>
-            <h2>Hubot 2.0 and related work</h2>
-          </div>
-        </div>
-        <div class="glass-card paper-card">
-          <div class="paper-content">
-            <h3>Hubot 2.0</h3>
-            <p>
-              Implemented a self-balancing humanoid torso simulation featuring two 5-DOF arms mounted on a two-wheeled base. Built the simulation using ROS and Gazebo and developed PD control for balancing and motion control.
-            </p>
-            <p>
-              This work connects directly to the published paper on the robotic arm manipulator mounted on a self-balancing two-wheeled mobile robot.
-            </p>
-            <a class="button ghost small" href="https://www.researchgate.net/publication/358211858_Development_of_Robotic_Arm_Manipulator_mounted_on_Self_Balancing_Two_Wheeled_Mobile_Robot" target="_blank" rel="noreferrer">Read reference ↗</a>
-          </div>
-        </div>
-      </section>
-
-      <section class="container section two-col compact">
-        <div>
-          <p class="section-tag">Education</p>
-          <h2>Academic background</h2>
-        </div>
-        <div class="glass-card info-panel">
-          <div class="edu-item">
-            <h3>Worcester Polytechnic Institute</h3>
-            <p>Master’s in Mechatronics, Robotics and Automation Engineering</p>
-            <p class="coursework-line">Relevant Coursework: Foundations of Robotics, Robot Control, Motion Planning, Robot Dynamics, Computer Vision</p>
-            <span>Expected May 2027</span>
-          </div>
-          <div class="edu-item">
-            <h3>College of Engineering Pune (COEP)</h3>
-            <p>B.Tech in Instrumentation & Control Engineering · Minor in Computer Science</p>
-            <p class="coursework-line">Relevant Coursework: Control System Design, Electronics and Embedded Systems, Robotics and Automation</p>
-            <span>May 2023</span>
-          </div>
-        </div>
-      </section>
-
-      <section id="hobbies" class="container section two-col hobbies-section">
-        <div>
-          <p class="section-tag">Beyond Engineering</p>
-          <h2>Photography, curiosity, and a competitive gaming streak.</h2>
-          <div class="glass-card hobby-copy">
-            <h3>Photography</h3>
-            <p>
-              Outside engineering, I enjoy photography — especially capturing moments from travel, campus life, robotics events, and everyday scenes that feel visually interesting.
-            </p>
-            <p>
-              It gives me a different way to think about composition, detail, motion, and observation — the same instincts that often show up in robotics and perception work.
-            </p>
-            <div class="interest-chips">
-              <span>Photography</span>
-              <span>Sci-fi</span>
-              <span>Thrillers</span>
-              <span>Movies & Series</span>
-              <span>Gaming</span>
-              <span>Rocket League</span>
-            </div>
-            <div class="interest-list">
-              <div>
-                <h3>Movies & Series</h3>
-                <p>I usually gravitate toward sci-fi and thriller stories — the kind with strong world-building, tension, and clever ideas.</p>
-                <p class="favorites-line">
-                  Favorites include <span>Interstellar</span>, <span>Inception</span>, <span>Blade Runner 2049</span>, <span>The Dark Knight</span>, <span>Dune</span>, <span>Dark</span>, <span>Black Mirror</span>, <span>Breaking Bad</span>, <span>True Detective</span>, and <span>Stranger Things</span>.
-                </p>
-              </div>
-              <div>
-                <h3>Gaming</h3>
-                <p>I enjoy gaming as a way to unwind, and Rocket League is the one I play the most.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="glass-card collage-card">
-          <div id="photo-collage" class="photo-grid" aria-label="Random photography collage"></div>
-          <p class="collage-caption">A fresh set of 15 photos is chosen each time the page loads.</p>
-        </div>
-      </section>
-
-      <section id="contact" class="container section contact-section">
-        <div class="glass-card contact-card">
-          <p class="section-tag">Contact</p>
-          <h2>Let’s build something useful.</h2>
-          <p>
-            I’m currently looking for internship opportunities in embedded software,
-            robotics software, controls, and autonomous systems.
-          </p>
-          <div class="contact-links">
-            <a href="mailto:anirudhnallawar02@gmail.com">anirudhnallawar02@gmail.com</a>
-            <span>508-304-2451</span>
-            <a href="https://github.com/AnirudhN-30" target="_blank" rel="noreferrer">GitHub</a>
-            <a href="https://www.linkedin.com/in/anirudh-nallawar" target="_blank" rel="noreferrer">LinkedIn</a>
-          </div>
-        </div>
-      </section>
-    </main>
-  </body>
+  <footer class="footer border-top">
+    <div class="shell footer-grid"><div><a class="wordmark" href="#top">Anirudh <span>Nallawar</span></a><p>Robotics engineer · Worcester, MA</p></div><div><a href="https://github.com/AnirudhN-30" target="_blank" rel="noreferrer">GitHub</a><a href="https://www.linkedin.com/in/anirudh-nallawar" target="_blank" rel="noreferrer">LinkedIn</a><a href="mailto:anirudhnallawar02@gmail.com">Email</a></div></div>
+    <div class="shell copyright"><span>© 2026 Anirudh Nallawar</span><span>Designed for the physical world.</span></div>
+  </footer>
+</body>
 </html>

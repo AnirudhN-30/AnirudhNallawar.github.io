@@ -1,0 +1,110 @@
+{
+  "task_id": "Mjlab-Flare-Payload-Targeting",
+  "tracked_entity": "payload",
+  "arrival_threshold_m": 0.2,
+  "checkpoint": "scenario2_26d / model_799",
+  "seed": 42,
+  "num_episodes": 8,
+  "deterministic_actions": true,
+  "episode_length_s": 15.0,
+  "trajectory": "random",
+  "trajectory_spacing_m": 1.2,
+  "trajectory_altitude_m": 1.0,
+  "trajectory_points_local_m": [],
+  "success_rate_at_least_one_waypoint": 1.0,
+  "mean_waypoints_reached": 7.875,
+  "crash_rate": 0.0,
+  "timeout_rate": 1.0,
+  "mean_return": 3.114267975091934,
+  "mean_minimum_waypoint_distance_m": 0.200432937592268,
+  "episodes": [
+    {
+      "env_id": 0,
+      "return": 3.3722996711730957,
+      "steps": 1500,
+      "duration_s": 15.0,
+      "end_reason": "timeout",
+      "waypoints_reached": 5,
+      "minimum_waypoint_distance_m": 0.20070858299732208,
+      "maximum_cable_angle_deg": 74.21880340576172,
+      "maximum_tendon_length_m": 0.6081815958023071
+    },
+    {
+      "env_id": 1,
+      "return": 3.3955347537994385,
+      "steps": 1500,
+      "duration_s": 15.0,
+      "end_reason": "timeout",
+      "waypoints_reached": 6,
+      "minimum_waypoint_distance_m": 0.20015263557434082,
+      "maximum_cable_angle_deg": 84.53025817871094,
+      "maximum_tendon_length_m": 0.6100760102272034
+    },
+    {
+      "env_id": 2,
+      "return": 3.2572972774505615,
+      "steps": 1500,
+      "duration_s": 15.0,
+      "end_reason": "timeout",
+      "waypoints_reached": 7,
+      "minimum_waypoint_distance_m": 0.2003052830696106,
+      "maximum_cable_angle_deg": 81.14625549316406,
+      "maximum_tendon_length_m": 0.6105352640151978
+    },
+    {
+      "env_id": 3,
+      "return": 1.993760347366333,
+      "steps": 1500,
+      "duration_s": 15.0,
+      "end_reason": "timeout",
+      "waypoints_reached": 8,
+      "minimum_waypoint_distance_m": 0.20012809336185455,
+      "maximum_cable_angle_deg": 71.89517211914062,
+      "maximum_tendon_length_m": 0.6081754565238953
+    },
+    {
+      "env_id": 4,
+      "return": 2.649866819381714,
+      "steps": 1500,
+      "duration_s": 15.0,
+      "end_reason": "timeout",
+      "waypoints_reached": 10,
+      "minimum_waypoint_distance_m": 0.20085853338241577,
+      "maximum_cable_angle_deg": 66.93663787841797,
+      "maximum_tendon_length_m": 0.6063169836997986
+    },
+    {
+      "env_id": 5,
+      "return": 3.1918811798095703,
+      "steps": 1500,
+      "duration_s": 15.0,
+      "end_reason": "timeout",
+      "waypoints_reached": 10,
+      "minimum_waypoint_distance_m": 0.20088452100753784,
+      "maximum_cable_angle_deg": 73.03556823730469,
+      "maximum_tendon_length_m": 0.6070224046707153
+    },
+    {
+      "env_id": 6,
+      "return": 3.5067832469940186,
+      "steps": 1500,
+      "duration_s": 15.0,
+      "end_reason": "timeout",
+      "waypoints_reached": 10,
+      "minimum_waypoint_distance_m": 0.20017434656620026,
+      "maximum_cable_angle_deg": 56.83522415161133,
+      "maximum_tendon_length_m": 0.6040770411491394
+    },
+    {
+      "env_id": 7,
+      "return": 3.546720504760742,
+      "steps": 1500,
+      "duration_s": 15.0,
+      "end_reason": "timeout",
+      "waypoints_reached": 7,
+      "minimum_waypoint_distance_m": 0.200251504778862,
+      "maximum_cable_angle_deg": 85.1815185546875,
+      "maximum_tendon_length_m": 0.609358549118042
+    }
+  ]
+}

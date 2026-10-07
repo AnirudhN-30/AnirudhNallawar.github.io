@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#f1eee5">
+<meta name="description" content="Integrating INDI low-level control into Betaflight, with quadrotor flight footage, tracking plots, and a look inside the firmware control loop.">
+<title>INDI Flight Control · Anirudh Nallawar</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="project-detail.css">
+<style>
+.meta{grid-template-columns:repeat(2,minmax(0,1fr))}@media(max-width:720px){.meta{grid-template-columns:1fr}}
+.flight-demo{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:3rem;align-items:center;margin:0 0 5rem}.flight-demo figure{margin:0}.flight-demo video{display:block;width:100%;max-height:680px;background:#17231f;border-radius:8px}.flight-demo figcaption,.plot-caption{font-size:.85rem;color:var(--dim);margin-top:1rem}.flight-demo h2{font-size:clamp(2rem,4vw,3rem);line-height:1.1}.flight-demo p{color:var(--dim)}.control-flow{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1rem;padding:0;list-style:none;margin:2rem 0 5rem}.control-flow li{border-top:3px solid var(--blue);background:var(--surface);padding:1.5rem}.control-flow strong{display:block;margin-bottom:.75rem}.control-flow p{font-size:.9rem;color:var(--dim)}.flight-plot{margin:0 0 5rem}.flight-plot img{width:100%;height:auto;border:1px solid var(--line)}.flight-note{padding:1.2rem;border-left:3px solid var(--blue);background:var(--surface)}
+@media(max-width:720px){.flight-demo{grid-template-columns:1fr;gap:1.5rem}.flight-demo video{max-height:65vh}.control-flow{grid-template-columns:1fr 1fr}.control-flow li{padding:1rem}}@media(max-width:420px){.control-flow{grid-template-columns:1fr}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<nav class="shell detail-nav" aria-label="Project navigation"><a href="../index.html">Anirudh <span class="brand-accent">Nallawar</span></a><a href="../index.html#projects">← All projects</a></nav>
+<main class="shell">
+<header class="detail-hero">
+<p class="eyebrow">Controls · Embedded firmware · Flight testing</p>
+<h1>INDI flight control on Betaflight 4.5.</h1>
+<p class="dek">A firmware port and Jetson interface for testing responsive low-level control during autonomous flight in a confined indoor space.</p>
+<div class="meta"><div><span>Dates</span><p>February–May 2026</p></div><div><span>Role</span><p>Firmware port & control integration</p></div><div><span>Platform</span><p>Betaflight 4.5 · Jetson</p></div><div><span>Stack</span><p>C · INDI · UART · Pi protocol</p></div></div>
+<div class="outcome-metrics"><div><strong>100+</strong><span>real-world test flights</span></div><div><strong>12 m/s</strong><span>maximum speed tested</span></div><div><strong>4 × 10 m</strong><span>indoor flight space</span></div></div>
+<p class="plot-caption">Test-campaign figures; the demo below is not identified as the maximum-speed run.</p>
+<div class="hero-actions"><a class="resource-button primary-resource" href="#flight-demo">Watch flight demo ↓</a><a class="resource-button" href="#tracking">Explore tracking results ↓</a></div>
+</header>
+<section class="case-section"><p class="section-label">The problem</p><div class="case-section-copy"><h2>Tight turns demanded a more responsive control loop.</h2><p>In the lab’s existing PX4 P–PID configuration, autonomous flights failed during tight turns when the low-level response could not keep up with the maneuver. We introduced INDI to investigate a more responsive alternative.</p></div></section>
+<section class="case-section"><p class="section-label">My contribution</p><div class="case-section-copy"><h2>From TU Delft’s implementation to the lab’s aircraft.</h2><ul><li>Ported TU Delft’s existing INDI implementation to Betaflight 4.5.</li><li>Set up the Jetson-to-flight-controller UART interface using the Pi protocol and custom ROS topics.</li><li>Integrated and flight-tested wrench and thrust/body-rate command modes with the lab pipeline.</li></ul><p>The hardest integration issue was the difference in coordinate-frame conventions between the source and target implementations. Commands and measured states needed consistent interpretation across the interface.</p></div></section>
+<section class="flight-demo" id="flight-demo" aria-labelledby="demo-heading">
+<figure><video controls playsinline preload="metadata" poster="../assets/indiflight/demo-poster.jpg" aria-label="Indoor quadrotor flight demonstration"><source src="../assets/indiflight/demo.mp4" type="video/mp4">Your browser does not support embedded video. <a href="../assets/indiflight/demo.mp4">Open the flight video</a>.</video><figcaption>Indoor flight demonstration · DQ-NMPC + INDI · TRPY commands.</figcaption></figure>
+<div><p class="eyebrow">Flight demonstration</p><h2 id="demo-heading">Flight-tested with the lab control pipeline.</h2><p>The test campaign exercised both command modes in real-world flights. This video and the accompanying plots show DQ-NMPC as the high-level controller, commanding the INDI loop in TRPY mode.</p><p>The results demonstrate flight integration. A matched PX4–INDI comparison would be needed to quantify the response-time improvement.</p></div>
+</section>
+
+<section class="case-section"><p class="section-label">System interface</p><div class="case-section-copy"><h2>Commands downstream. State feedback upstream.</h2><p>The Jetson’s high-level controller uses custom ROS topics to send the selected control type and actions through the Pi protocol over UART. Flight-controller states return through the interface as feedback.</p><div class="detail-grid"><article><h3>Wrench mode</h3><p>Force-and-torque commands.</p></article><article><h3>TRPY mode</h3><p>Thrust plus roll, pitch, and yaw rate commands.</p></article></div></div></section>
+<section class="case-section"><p class="section-label">Controller principle</p><div class="case-section-copy"><h2>Correct motor inputs using measured acceleration.</h2><p>Incremental Nonlinear Dynamic Inversion (INDI) compares desired acceleration with the measured response. An estimate of actuator effectiveness maps that difference to an incremental control correction. Acceleration feedback captures disturbance effects without requiring a complete model of them.</p><p>In this implementation, filtered IMU feedback feeds a bounded control-allocation step. Sensor quality, filtering, and actuator limits remain important to performance.</p><p>Further reading: <a href="https://fusion.engineering/intro-to-incremental-non-linear-dynamic-inversion-indi/" target="_blank" rel="noreferrer">Fusion Engineering’s PID–INDI explanation and wind-tunnel comparison ↗</a> (external experiments).</p></div></section>
+
+
+
+<section class="case-section" id="tracking"><p class="section-label">Tracking evidence</p><div class="case-section-copy"><h2>Reference and measured motion.</h2><p>The six plots compare reference, odometry, and command signals during repeated maneuvers. Position components appear on the right; pose-orientation components appear on the left. The orientation components are not roll, pitch, and yaw angles.</p></div></section>
+<figure class="flight-plot"><a href="../assets/indiflight/tracking-results.png" target="_blank" rel="noreferrer"><img src="../assets/indiflight/tracking-results.png" alt="Six recorded signal plots: orientation components at left and position components at right, comparing reference and measured quadrotor motion" loading="lazy" width="2249" height="1347"></a><figcaption class="plot-caption">Recorded tracking signals; aggregate RMSE is not reported in this screenshot. <a href="../assets/indiflight/tracking-results.png" target="_blank" rel="noreferrer">Open the full-resolution plot ↗</a></figcaption></figure>
+<section class="case-section"><p class="section-label">Attribution</p><div class="case-section-copy"><h2>Built on TU Delft’s Indiflight and Betaflight.</h2><p>The underlying INDI source credits Till Blaha, Delft University of Technology. The port, communication interface, and lab integration described above are my contribution.</p><div class="hero-actions"><a class="resource-button" href="../cv.html">View CV ↗</a><a class="resource-button" href="mailto:anirudhnallawar02@gmail.com">Discuss this project ↗</a></div></div></section>
+<a class="next-project" href="payload-control.html"><span>Next project</span><strong>Cable-Suspended Payload Control</strong><i>→</i></a>
+</main></body></html>

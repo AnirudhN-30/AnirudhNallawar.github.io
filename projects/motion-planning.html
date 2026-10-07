@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#f1eee5">
+  <meta name="description" content="A detailed case study of a task and motion planning framework for robotic manipulation using PDDL, Pyperplan, OMPL, and Genesis.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="project-detail.css">
+  <title>Task &amp; Motion Planning · Anirudh Nallawar</title>
+</head>
+<body class="motion-case-study">
+  <nav class="shell detail-nav" aria-label="Project navigation">
+    <a href="../index.html">Anirudh <span class="brand-accent">Nallawar</span></a>
+    <a href="../index.html#projects">← All projects</a>
+  </nav>
+
+  <main class="shell">
+    <header class="detail-hero case-study-hero">
+      <p class="eyebrow">01 / Autonomy · Task and Motion Planning</p>
+      <h1>Turning assembly goals into robot motion.</h1>
+      <p class="dek">A closed-loop manipulation framework that combines symbolic PDDL reasoning with collision-free OMPL trajectories, enabling a Franka Panda robot to build increasingly complex block structures in the Genesis simulator.</p>
+      <div class="meta">
+        <div><span>Course</span><p>RBE 550 · Fall 2025</p></div>
+        <div><span>My role</span><p>Robotics software engineer · Team 5</p></div>
+        <div><span>Stack</span><p>Python · Genesis · PDDL · Pyperplan · OMPL</p></div>
+      </div>
+      <div class="hero-actions" aria-label="Project resources">
+        <a class="resource-button primary-resource" href="motion_planning_report.pdf" target="_blank">Read full report ↗</a>
+        <a class="resource-button" href="https://github.com/AnirudhN-30/RBE550_final_project" target="_blank" rel="noreferrer">View source ↗</a>
+        <a class="resource-button" href="https://drive.google.com/drive/folders/1PXzvTZmVpH08VqE7DXWY-XTInKLMhMbe" target="_blank" rel="noreferrer">Watch demos ↗</a>
+      </div>
+    </header>
+
+    <figure class="case-media case-media-contain">
+      <img src="motion_planning.png" alt="Franka Panda robot manipulating colored blocks in the Genesis simulator">
+      <figcaption>The Franka Panda manipulation environment in Genesis.</figcaption>
+    </figure>
+
+    <section class="case-section case-intro">
+      <p class="section-label">The problem</p>
+      <div class="case-section-copy">
+        <h2>Symbolic plans do not understand geometry. Motion planners do not understand intent.</h2>
+        <p>A task planner can decide that a red block belongs on a green block, but it cannot determine whether the robot can reach that pose without a collision. A motion planner can find a safe joint-space path, but it does not know which block should move next or what the finished structure should look like.</p>
+        <p>Our goal was to connect both levels of reasoning in one system. Starting from noisy block poses, the robot had to understand the scene, generate an action plan, ground each action into feasible arm motion, execute it in physics, and check whether the world still matched its assumptions.</p>
+      </div>
+    </section>
+
+    <section class="case-section">
+      <p class="section-label">Architecture</p>
+      <div class="case-section-copy">
+        <h2>A closed loop from scene state to verified execution.</h2>
+        <p>The system uses four connected stages. Re-grounding closes the loop: after the robot acts, it observes the scene again instead of assuming execution succeeded.</p>
+        <ol class="numbered-process">
+          <li><div><h3>Symbolic abstraction</h3><p>Continuous block and gripper poses are converted into logical predicates: <code>ON</code>, <code>ONTABLE</code>, <code>CLEAR</code>, <code>HOLDING</code>, and <code>HANDEMPTY</code>.</p></div></li>
+          <li><div><h3>Task planning</h3><p>The current predicates and desired goal are written into a PDDL problem. Pyperplan returns grounded actions such as pick-up, unstack, stack, and put-down.</p></div></li>
+          <li><div><h3>Motion and execution</h3><p>Each symbolic action becomes a robot primitive. Inverse kinematics produces target configurations and OMPL’s RRT-Connect searches for a collision-free joint-space trajectory.</p></div></li>
+          <li><div><h3>Re-grounding and recovery</h3><p>After physics settles, the predicates are extracted again. A failed grasp, shifted block, or collapsed tower updates the next plan rather than silently corrupting execution.</p></div></li>
+        </ol>
+      </div>
+    </section>
+
+    <figure class="case-media architecture-media">
+      <img src="motion_planning_architecture.png" alt="Architecture diagram showing symbolic abstraction, task planning, execution, and re-grounding">
+      <figcaption>The implemented TAMP pipeline and the data passed between its four stages.</figcaption>
+    </figure>
+
+    <section class="case-section">
+      <p class="section-label">Implementation</p>
+      <div class="case-section-copy">
+        <h2>Grounding abstract actions in physical constraints.</h2>
+        <div class="detail-grid">
+          <article><h3>State estimation</h3><p>Geometric thresholds classify blocks as stacked, clear, on the table, or held. The implementation uses a 40 mm block size, 15 mm vertical tolerance, and 20 mm horizontal alignment tolerance.</p></article>
+          <article><h3>Collision-aware planning</h3><p>The OMPL bridge derives bounds from the robot’s joint limits and validates every sampled state. Contact between the fingers and the currently held object is allowed; unintended robot, object, and environment collisions are rejected.</p></article>
+          <article><h3>Motion primitives</h3><p>Pick and place behaviors sequence pre-grasp motion, gripper control, vertical approach, lifting, transport, release, and retreat. Separating horizontal motion, wrist rotation, and vertical placement improves stability.</p></article>
+          <article><h3>Diagnostics</h3><p>Planning failures report out-of-bounds joints and colliding links. Adapter and type-conversion layers keep Genesis, NumPy, PyTorch, and the C++ OMPL bindings interoperable.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="case-section">
+      <p class="section-label">My contribution</p>
+      <div class="case-section-copy contribution-panel">
+        <h2>Failure recovery for the tallest-tower challenge.</h2>
+        <p>I led the implementation of Goal 3: autonomously constructing the tallest stable tower from ten scattered blocks. The strategy selected blocks incrementally, verified stability after every placement, and re-planned from newly extracted predicates when a block fell.</p>
+        <p>I also played a central role in system debugging and troubleshooting, particularly joint-limit violations, collision-detection failures, error handling, and diagnostic tooling. The architecture, symbolic abstraction, OMPL integration, documentation, and testing were collaborative team efforts.</p>
+      </div>
+    </section>
+
+    <section class="case-section">
+      <p class="section-label">Experiments</p>
+      <div class="case-section-copy">
+        <h2>From classical Blocksworld to contact-sensitive structures.</h2>
+        <div class="experiment-list">
+          <article><span>Goal 01</span><h3>Two ordered towers</h3><p>Rearranged six blocks from scattered and pre-stacked scenes into two specified three-block towers.</p></article>
+          <article><span>Goal 02</span><h3>Five-block tower</h3><p>Built an ordered five-block tower while placing the unused cyan block safely to the side.</p></article>
+          <article><span>Goal 03</span><h3>Tallest stable tower</h3><p>Reached seven blocks before the eighth placement toppled the structure, triggering autonomous recovery attempts.</p></article>
+          <article><span>Goal 04A</span><h3>Two-layer pentagon</h3><p>Introduced deterministic base and top slots for a ten-block bridged structure. The marginal support geometry exposed sensitivity to release impulses and simulator noise.</p></article>
+          <article><span>Goal 04B</span><h3>Directional grid</h3><p>Extended PDDL with directional X/Y adjacency predicates, constructed a repeatable 2×2 base, and stacked the remaining blocks while preserving spatial relationships.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="outcome case-outcome">
+      <p class="section-label">The outcome</p>
+      <blockquote>The project demonstrated a complete path from continuous perception to symbolic reasoning, collision-free manipulation, verification, and recovery—not just a scripted pick-and-place demo.</blockquote>
+      <div class="outcome-metrics">
+        <div><strong>7</strong><span>blocks in the tallest stable tower</span></div>
+        <div><strong>5</strong><span>progressively harder assembly goals</span></div>
+        <div><strong>4</strong><span>closed-loop planning stages</span></div>
+      </div>
+    </section>
+
+    <section class="case-section team-section">
+      <p class="section-label">Team &amp; resources</p>
+      <div class="case-section-copy">
+        <h2>RBE 550 · Team 5</h2>
+        <p>Sahil Gajera · Ashish Sukumar · Anirudh Nallawar · Rajdeep Banerjee</p>
+        <div class="hero-actions">
+          <a class="resource-button primary-resource" href="motion_planning_report.pdf" target="_blank">Open the report ↗</a>
+          <a class="resource-button" href="https://github.com/AnirudhN-30/RBE550_final_project" target="_blank" rel="noreferrer">Browse the code ↗</a>
+          <a class="resource-button" href="https://drive.google.com/drive/folders/1PXzvTZmVpH08VqE7DXWY-XTInKLMhMbe" target="_blank" rel="noreferrer">Project videos ↗</a>
+        </div>
+      </div>
+    </section>
+
+    <a class="next-project" href="quadrotor-control.html"><span>Next project</span><strong>Quadrotor Control &amp; Trajectory Tracking</strong><i>→</i></a>
+  </main>
+</body>
+</html>

@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>CV · Anirudh Nallawar</title>
+<style>body{font:16px/1.7 system-ui,sans-serif;color:#24372e;background:#faf9f5;margin:0}main{max-width:850px;margin:3rem auto;padding:0 1.5rem}h1{font-size:2.5rem;line-height:1.2}h2{font-size:1.2rem;margin-top:3rem;border-bottom:1px solid #bac9c0;padding-bottom:.5rem}p{white-space:pre-wrap}a{color:#315b45}nav{display:flex;justify-content:space-between;gap:1rem}button{font:inherit;padding:.4rem .8rem;cursor:pointer}@media print{nav{display:none}main{margin:0;max-width:none}body{background:white;font-size:10pt}h2{break-after:avoid;margin-top:1.5rem}p{orphans:3;widows:3}}</style></head><body><main><nav><a href="index.html">← Portfolio</a><button onclick="window.print()">Print / Save as PDF</button></nav><h1>Anirudh Nallawar</h1><p>Robotics & Embedded Systems<br><a href="mailto:anirudhnallawar02@gmail.com">anirudhnallawar02@gmail.com</a></p><h2>EDUCATION</h2>
+<p>Worcester Polytechnic Institute, Worcester, MA					                                        Aug 2025 - May 2027</p>
+<p>Master’s in Robotics Engineering 											  4.0/4.0</p>
+<p>Relevant Coursework: RL, Optimal Control, Robot Control, Computer Vision and DL</p>
+<p>College of Engineering Pune (COEP), India							           Aug 2019 - May 2023</p>
+<p>B.Tech in Instrumentation &amp; Control Engineering, Minor in Computer Science 					  8.42/10</p>
+<p>Relevant Coursework: Control System Design, Electronics and Embedded Systems, Robotics and Automation</p>
+<h2>SKILLS</h2>
+<p>Programming &amp; Operating Systems: Python, C++, C, Embedded C, MATLAB, Linux</p>
+<p>Embedded Systems &amp; Firmware: STM32, FreeRTOS, Embedded Programming, Bootloaders, Device Drivers, OTA Updates, OctoSPI, SPI, I2C, UART, CAN, BLE</p>
+<p>Robotics, Control &amp; Autonomy: ROS 2 Humble, Robot Kinematics &amp; Dynamics, Motion Planning, Task and Motion Planning (TAMP), State Machines, PID Control, INDI, LQR, NMPC, Geometric Control, Trajectory Generation</p>
+<p>Perception, Estimation &amp; Machine Learning: Reinforcement Learning, Computer Vision, Stereo Vision, Visual-Inertial Odometry, EKF/MSCKF, Disparity Mapping, Depth Estimation, Point Cloud Reconstruction, Structure-from-Motion, NeRF, Deep Learning</p>
+<p>Automotive &amp; EV Systems: Vehicle Control Units (VCUs), Instrument Clusters (ICLs), EV Charger Control (CC–CV), Vehicle Safety Systems, CAN Communication</p>
+<p>Simulation &amp; Robotics Tools: MuJoCo, NVIDIA Newton, Gazebo, Genesis, OMPL, MATLAB/Simulink, Proteus</p>
+<p>Electronics &amp; Hardware Design: Analog &amp; Digital Electronics, Circuit Simulation, Schematic Capture, PCB Design, Altium Designer</p>
+<p>Development Tools: Git, Docker, Singularity, Visual Studio Code, STM32CubeIDE, Keil, Eclipse, Vector CANdb++, Docklight, TouchGFX</p>
+<h2>WORK EXPERIENCE</h2>
+<p>Graduate Research Volunteer - Aerial Controls and Perception Lab, Worcester, MA	          Jan 2026 - Present</p>
+<p>Developing autonomous control and onboard state-estimation methods for quadrotors carrying cable-suspended payloads, targeting waypoint and gate-navigation tasks without external motion-capture feedback.</p>
+<p>Built a GPU-accelerated RL training pipeline using MuJoCo Warp, NVIDIA Newton, and PyTorch, scaling PPO to 2,048 parallel environments at ~33K transitions/s, approximately 30× faster than the CPU pipeline.</p>
+<p>Implemented an INDI low-level flight controller in Betaflight firmware for aggressive flight and disturbance-rejection experiments.</p>
+<p>Developing an onboard payload-state estimator using quadrotor proprioceptive states, control histories, and temporal dynamics to infer hidden payload motion.</p>
+<p>Investigating hybrid model-based and learning-based control architectures combining nonlinear dynamics, NMPC, reinforcement learning.</p>
+<p>Graduate Research Volunteer - Autonomous Vehicle and Mobility Institute, Worcester, MA	        Oct 2025 - May 2026</p>
+<p>Conducting research on vision-based tire-deflation detection, focusing on non-contact sensing using embedded cameras mounted inside the wheel.</p>
+<p>Designed a stereo-perception pipeline to estimate tire deformation through disparity mapping and depth reconstruction.</p>
+<p>Analyzed depth variations and tire-surface geometry to characterize deformation and infer deflation conditions across different operating scenarios.</p>
+<p>Embedded  Software Engineer, BGAUSS Auto. Pvt. Ltd, India   	      Jan 2023 - June 2025</p>
+<p>Developed production firmware for an integrated Vehicle Control Unit (VCU) and Instrument Cluster (ICL) for electric two-wheelers, supporting production volumes of approximately 2,000 vehicles/month and interfacing with the BMS, motor controller (MCU), and instrument cluster.</p>
+<p>Designed and implemented a custom BLE-based OTA bootloader and firmware-update pipeline, reducing firmware-update time by approximately 96% (2 hours → 5 minutes) for 2 MB update images and supporting firmware deployment across approximately 10,000 vehicles.</p>
+<p>Improved OTA update success from approximately 90% to 97% by implementing BLE reconnection recovery, CRC-32 image verification, and application-to-bootloader handshaking, improving recovery from interrupted transfers and detection of corrupted updates.</p>
+<p>Developed the embedded memory architecture around 2 MB internal flash and 64 MB external OctoSPI flash, managing storage and update workflows for a combined firmware and UI image of approximately 17 MB.</p>
+<p>Integrated the vendor-defined BMS application-update protocol into the VCU, enabling BMS firmware updates through the vehicle update architecture and achieving approximately 99% reported update success during production deployment.</p>
+<p>Developed IMU-based Hill Hold and Rollover Detection using 10 Hz inertial sensing, complementary-filter orientation estimation, and vehicle-state logic; Hill Hold activated above a 3° incline when vehicle speed remained below 5 km/h for 5 s, while rollover detection used a 45° side-inclination threshold.</p>
+<p>Reduced safety-feature false triggers from approximately 50% to 5% (90% reduction) by incorporating vehicle-speed and drive-mode gating, validated across 50+ test slopes and extended field-data logging.</p>
+<p>Integrated and validated embedded peripherals and communication interfaces including I2C IMU, UART BLE, OctoSPI flash, display interfaces, LEDs, and power-regulation circuitry, performing board bring-up and hardware/firmware debugging from prototype through production.</p>
+<p>Developed vehicle operational state machines for Drive, Reverse, Park, and Charging modes in MATLAB/Simulink and implemented instrument-cluster interfaces using TouchGFX.</p>
+<p>Developed prototype CC–CV EV-charger firmware using PI control, implementing charging-state logic and closed-loop current/voltage regulation.</p>
+<h2>PROJECTS</h2>
+<p>Curriculum Reinforcement learning Agent for Rocket League</p>
+<p>Developed a curriculum-based reinforcement-learning agent for Rocket League, progressing from stationary-ball tracking to high-speed interception, boost control, 3D state awareness, and jumping mechanics.</p>
+<p>Trained a PPO interception policy that achieved 97.8–98.2% success across stationary, slow, medium, and fast-ball scenarios over 1,000 unseen evaluation episodes.</p>
+<p>Designed a factorized MultiDiscrete controller with 21 policy logits representing 1,944 simultaneous control combinations, enabling throttle, steering, aerial rotation, jumping, boost, and powerslide.</p>
+<p>Implemented checkpoint transfer across changing observation and action spaces, preserving learned feature layers while migrating policy heads and resetting incompatible PPO optimizer states.</p>
+<p>Built automated regression and challenge suites covering escaping balls, adverse vehicle momentum, distant starts, and elevated-ball scenarios; achieved approximately 94% success on hard interception challenges.</p>
+<p>Established an evaluation-driven training pipeline with staged checkpoints, randomized scenarios, behavioral metrics, failure analysis, and graduation criteria to prevent reward hacking and skill regression.</p>
+<p>Hubot  3.0									      		          June 2026 - Present</p>
+<p>Rebuilt HuBot as a first-principles MuJoCo simulation, modeling a free-floating chassis, wheel-ground contact, motor torque limits, and passive dynamics for a two-wheeled mobile manipulator.</p>
+<p>Developed hardware-oriented balancing controllers using noisy 6-DoF IMU measurements, quantized wheel encoders, complementary-filter state estimation, cascaded PD control, and discrete-time LQR.</p>
+<p>Implemented forward kinematics and damped least-squares inverse kinematics for dual manipulators, including joint-limit enforcement, Cartesian pose commands, and residual reporting for unreachable targets.</p>
+<p>Developed a PPO-based reinforcement-learning environment with randomized initial conditions, smoothness-aware reward shaping, position regulation, and out-of-distribution robustness testing under randomized external disturbances.</p>
+<p>INDI low level controller and  Controller Benchmarking for Quadrotors</p>
+<p>Implemented and integrated an Incremental Nonlinear Dynamic Inversion (INDI) low-level flight controller within Betaflight firmware for trajectory tracking and disturbance rejection during aggressive quadrotor flight.</p>
+<p>Benchmarked DQ-NMPC, NMPC, and geometric high-level controllers paired with INDI, L1 adaptive control, and PID across seven trajectories with increasing speed, acceleration, and spatial constraints.</p>
+<p>Tuned and validated controller combinations in real-world flight experiments, evaluating trajectory-tracking accuracy, stability, and robustness under increasingly aggressive maneuvers.</p>
+<p>Demonstrated DQ-NMPC + INDI flight at up to 9 m/s and 5g acceleration within a constrained 3 m × 8 m flight space, with approximately 0.20 m RMSE.</p>
+<p>Achieved approximately 0.06 m RMSE with geometric control + INDI on trajectories up to 3 m/s and 2g, while characterizing performance degradation as trajectory aggressiveness increased.</p>
+<p>Analytical and Reinforcement-Learning Approaches for Onboard Cable-Suspended Payload Control</p>
+<p>Developed a MuJoCo/Newton simulation of a quadrotor with a cable-suspended payload, modeling coupled vehicle–payload dynamics for waypoint-control experiments.</p>
+<p>Parallelized PPO training across 2,048 GPU environments, reaching ~33K transitions/s and ~30× simulation speedup over the CPU implementation.</p>
+<p>Designed a five-stage curriculum progressing from easier payload-stabilization tasks to more difficult waypoint-navigation scenarios while preserving compatibility with existing FLARE checkpoints.</p>
+<p>Implemented randomized initial conditions and task parameters to improve policy robustness across varying payload states and trajectories.</p>
+<p>Validated GPU dynamics against the CPU reference and investigated discrepancies arising from integration, contact, and suspended-load dynamics.</p>
+<p>Explored physics-informed constraints including cable-length feasibility, slack/taut transitions, and tension-based mode switching for future estimator/control integration.</p>
+<p>Building Built in Minutes — Structure-from-Motion &amp; Neural Radiance Fields</p>
+<p>Built an incremental Structure-from-Motion pipeline from scratch for sparse 3D reconstruction, implementing normalized eight-point fundamental-matrix estimation, RANSAC correspondence filtering, essential-matrix decomposition, chirality-based pose selection, and linear/nonlinear triangulation.</p>
+<p>Implemented incremental camera registration using RANSAC PnP with nonlinear pose refinement, followed by sparse bundle adjustment jointly optimizing camera poses and 3D landmarks to minimize reprojection error.</p>
+<p>Successfully registered all 5 camera views and reconstructed a final sparse map of 917 3D points, with post-BA mean reprojection errors of approximately 1.23–2.29 px across the five cameras.</p>
+<p>Evaluated geometric robustness across 10 image pairs using RANSAC-filtered correspondences; initialized the reconstruction with 348 geometrically consistent matches/3D points from the first camera pair.</p>
+<p>Implemented a NeRF pipeline with coarse-to-fine volumetric rendering and hierarchical sampling, achieving approximately 27–28 dB training PSNR after 300K iterations and approximately 25–25.5 dB validation PSNR.</p>
+<p>Evaluated NeRF reconstruction over 200 Lego test views, achieving 24.46 dB mean PSNR, 0.857 mean SSIM, and 27.41 dB peak PSNR; positional encoding improved Ship-dataset mean PSNR from 24.10 → 24.44 dB and SSIM from 0.770 → 0.776.</p>
+<p>EinsteinVision — Multi-Camera Autonomous-Driving Perception</p>
+<p>Developed a multi-camera autonomous-driving perception pipeline processing synchronized front, rear, left, and right video to detect, track, localize, and reconstruct surrounding vehicles, pedestrians, lanes, traffic lights, and road signs in a unified 3D ego-vehicle frame.</p>
+<p>Integrated YOLO-based detection, UniDepth metric depth estimation, BoT-SORT tracking, and TwinLiteNet+ lane segmentation, combining learned perception with classical computer vision and temporal filtering for robust scene understanding.</p>
+<p>Implemented dynamic-object motion estimation using RAFT optical flow, RANSAC epipolar geometry, and Sampson distance to distinguish parked from moving vehicles and estimate ego-relative motion.</p>
+<p>Built a DINOv2-based vehicle classifier using ~20.8K VLM-labeled vehicle crops, achieving 88.9% classification accuracy and 3–6 ms GPU inference, approximately 100× faster than the VLM labeling model.</p>
+<p>Developed time-to-collision (TTC) prediction from temporally tracked 3D object trajectories, classifying warning and critical collision risks based on estimated approach velocity and distance.</p>
+<p>Deep and Un-Deep VIO — Classical &amp; Learned Visual-Inertial Odometry</p>
+<p>Implemented Stereo MSCKF visual-inertial odometry with error-state IMU propagation, RK4 integration, camera-state augmentation, feature constraints, and EKF measurement updates, achieving approximately 0.07–0.21 m ATE across five EuRoC Machine Hall sequences.</p>
+<p>Designed a deep VIO architecture fusing CNN-based visual motion features with BiLSTM-encoded 6-DoF inertial measurements through residual SE(3) pose refinement; generated synchronized RGB/IMU training trajectories in Blender.</p>
+<p>Conducted controlled ablation studies to diagnose domain shift, motion-scale, and pose-learning failure modes, reducing vision-only trajectory error by 67% (11.81 → 3.86 m ATE) through texture control and direct metric translation learning.</p>
+<p>Automatic Image Panorama Generation - Course Project</p>
+<p>Developed and evaluated classical and learning-based homography-estimation pipelines for panorama stitching, combining feature-based geometric methods with supervised and unsupervised HomographyNet architectures.</p>
+<p>Trained a 9M-parameter HomographyNet to regress projective transformations from paired 128 × 128 image patches, implementing both supervised geometric-loss and unsupervised photometric-loss formulations.</p>
+<p>Achieved 3.99 px mean endpoint error (3.30 px median) with supervised homography estimation versus 14.47 px mean EPE (~13 px median) for the unsupervised approach, demonstrating substantially higher geometric accuracy from explicit supervision.</p>
+<p>Achieved 0.64 ms/image-pair inference latency for the supervised HomographyNet during the reported GPU evaluation, while maintaining approximately 4 px mean EPE on the test set.</p>
+<p>Integrated neural homography predictions into a hybrid panorama-stitching pipeline, converting local network predictions into global correspondences and aggregating them using a 512-hypothesis soft-weighted selection strategy before multiband/Poisson blending.</p>
+<p>Applied weighted homography refinement to the selected hypothesis, yielding a reported 10–20% reduction in mean reprojection error relative to the initial hypothesis.</p>
+<p>Foundations of Robotics – Course Project					                                         Oct 2025 - Dec 2025</p>
+<p>Developed a complete kinematics and control pipeline for a 4-DOF OpenManipulator-X robotic arm using ROS 2.</p>
+<p>Derived Denavit–Hartenberg parameters and implemented forward kinematics (FK) to compute the real-time end-effector pose from measured joint states.</p>
+<p>Implemented analytical inverse kinematics (IK) as a ROS 2 service, converting desired end-effector poses into joint-angle commands.</p>
+<p>Implemented velocity-level kinematics and Jacobian computation to map between joint-space and Cartesian end-effector velocities.</p>
+<p>Built ROS 2 services for forward and inverse velocity kinematics, enabling Cartesian straight-line end-effector motion.</p>
+<p>Implemented a linear Cartesian path controller using the Jacobian pseudoinverse to command straight-line motion along the +Y direction.</p>
+<p>Designed a position-integrator node to convert joint-velocity commands into joint-position references for robot execution.</p>
+<p>Developed a PD current controller for a Dynamixel actuator, achieving smooth joint positioning with a settling time of &lt;1 s.</p>
+<p>Integrated ROS 2 nodes, topics, and services with the Dynamixel SDK, validating performance through real-time plotting and hardware experiments.</p>
+<p>Robot Control – Course Project					            		                                        Oct 2025 - Dec 2025</p>
+<p>Designed and implemented a quadrotor trajectory-tracking and control framework integrating trajectory generation, PD control, and Linear Quadratic Regulation (LQR).</p>
+<p>Generated smooth polynomial circular and diamond trajectories with continuous position, velocity, and acceleration profiles to ensure physical feasibility.</p>
+<p>Implemented and systematically tuned PD-based position and attitude controllers through simulation and real-world experiments.</p>
+<p>Evaluated controller performance using axis-wise RMSE, analyzing trade-offs between trajectory-tracking accuracy and velocity smoothness.</p>
+<p>Achieved sub-centimeter position-tracking accuracy, with approximately 0.004–0.006 m RMSE across X/Y/Z axes for optimized trajectories.</p>
+<p>Analyzed the effects of trajectory duration and controller gains, identifying instability during aggressive trajectories caused by actuator saturation and thrust limitations.</p>
+<p>Linearized quadrotor dynamics around hover and designed an LQR controller using state-space modeling.</p>
+<p>Tuned Q and R matrices to investigate trade-offs among stability, tracking performance, and control effort.</p>
+<p>Compared PD and LQR controllers across circular and diamond trajectories, identifying improved LQR performance on piecewise-linear trajectories alongside real-world actuator and modeling limitations.</p>
+<p>Visualized and validated system behavior using time-series analysis and 3D trajectory tracking.</p>
+<p>Motion Planning – Course Project					            		                        Oct 2025 - Dec 2025</p>
+<p>Designed and implemented a complete Task and Motion Planning (TAMP) framework for robotic manipulation, integrating symbolic planning (PDDL) with geometric motion planning (OMPL).</p>
+<p>Developed a closed-loop planning pipeline consisting of:</p>
+<p>Symbolic abstraction of continuous scene state into predicates</p>
+<p>Task planning using Pyperplan (PDDL)</p>
+<p>Motion planning and execution using OMPL within the Genesis physics simulator</p>
+<p>Implemented predicate extraction (ON, ONTABLE, CLEAR, HOLDING, HANDEMPTY) by grounding geometric relationships using spatial tolerances.</p>
+<p>Designed motion primitives (pick, place, stack, unstack) combining inverse kinematics, collision checking, and trajectory execution.</p>
+<p>Integrated OMPL planners (RRTConnect, RRT, PRM, RRT*) with custom state validity checking, allowing intentional gripper–object contact while rejecting other collisions.</p>
+<p>Implemented re-grounding and re-planning logic to detect execution failures (block slip, collision, tower collapse) and autonomously recover.</p>
+<p>Successfully demonstrated the system on progressively complex manipulation tasks:</p>
+<p>Two 3-block towers from scattered and pre-stacked scenes</p>
+<p>Single 5-block tower with goal-dependent symbolic constraints</p>
+<p>Tallest tower challenge, achieving stable stacking of 7 blocks with autonomous recovery on collapse</p>
+<p>Led the Tallest Tower Challenge, focusing on failure recovery, diagnostic tools, and collision debugging, resolving joint-limit violations and planning failures.</p>
+<p>Contributed to advanced extensions including two-phase planning strategies and debugging support for complex spatial arrangements.</p>
+<p>Virtual  Learning  Framework  for  Microcontrollers						            Jan 2023 - May 2023</p>
+<p>Developed a web-based virtual laboratory for PIC microcontrollers, enabling embedded-systems experiments without requiring access to physical microcontroller hardware.</p>
+<p>Designed and implemented 5 virtual experiments covering system-clock configuration, GPIO control, PWM timing, ADC conversion, and core microcontroller programming concepts, with simulated behavior designed to reflect hardware-based laboratory workflows.</p>
+<p>Built the framework for repeatable, self-paced experimentation, abstracting microcontroller peripherals and embedded-system behavior into an interactive educational environment.</p>
+<p>Developed the experimental workflows and original instructional content for the Introduction to Microcontrollers course, with the material made available as reference content across 11 participating institutions and approximately 3,000–3,500 students having access in 2023.</p>
+<p>Delivered the completed framework and instructional material to the institute for continued use as course and laboratory reference content.</p>
+<p>Casting Flowers Over Angkor Wat: ROBOCON 23 Competition					           Nov 2022 - July 2023</p>
+<p>Designed and implemented control algorithms and embedded firmware for two manually operated competition robots, integrating laser distance sensing, encoder feedback, and DC-motor actuation for navigation and ring-throwing tasks within the competition arena.</p>
+<p>Developed and tuned the ring-throwing mechanism for an operating range of up to 8 m at a 1 m target height, achieving approximately 100% accuracy below 2 m, 80% at 2–4 m, and 50% at 5 m during testing.</p>
+<p>Developed a competition strategy that enabled the team to become the first team to achieve the maximum possible match score, combining robot capabilities and task sequencing to optimize game completion.</p>
+<p>Led the team through system design, integration, testing, and on-field debugging, resolving mechanical, electrical, and control issues under competition constraints.</p>
+<p>Achieved 5th place nationally among 50+ teams at the ROBOCON National Robotics Championship.</p>
+<p>Self Balancing Stick										             Jan 2022 - Mar 2022</p>
+<p>Simulated a self-balancing inverted pendulum system using two-axis reaction wheels in MATLAB Simscape.</p>
+<p>Analyzed system dynamics and control response to maintain stability under disturbances.</p>
+<p>Gained practical exposure to control theory, system modeling, and dynamic simulations for unstable systems.</p>
+<p>Lagori Playing Robots: ROBOCON 22 Competition						          Sept 2021 - July 2022</p>
+<p>Developed a 35 kg semi-autonomous competition robot with a four-wheel omnidirectional drivetrain and 3-DOF gripper mechanism for ball manipulation and Lagori gameplay.</p>
+<p>Implemented a hybrid control architecture combining manual object pickup with autonomous gripper rotation, placement, and selected traversal sequences, allowing operators to retain control during uncertain interactions while automating repeatable tasks.</p>
+<p>Developed autonomous omnidirectional traversal at speeds up to 5 m/s, achieving approximately 10 cm positioning error over a 5 m traversal during testing.</p>
+<p>Designed and integrated embedded electronics, motor-control interfaces, sensors, and a custom PCB, supporting coordinated drivetrain and manipulation control across the robot.</p>
+<p>Developed the manipulation sequence for handling ~200 g game balls, coordinating pickup, gripper rotation, and automated placement during competition tasks.</p>
+<p>Integrated PS4-based teleoperation with autonomous motion and manipulation routines, enabling switching between operator-controlled and automated behaviors during gameplay.</p>
+<p>Built and validated the complete 35 kg robotic system, completing the targeted competition task sequence in under 45 seconds during testing.</p>
+<p>Hubot  2.0									      		          June 2021 - Nov 2021</p>
+<p>Implemented a self-balancing humanoid torso simulation featuring two 5-DOF arms mounted on a two-wheeled base.</p>
+<p>Developed a PD control algorithm for balancing and motion control.</p>
+<p>Built the simulation using ROS and Gazebo, enabling realistic modeling of robot dynamics and actuator behavior.</p>
+<p>Gained experience in robotic simulation, control design, and validation prior to hardware implementation.</p>
+<h2>PATENTS &amp; PUBLICATIONS</h2>
+<p>Instrument  Cluster for  Use with  Vehicle  - Application No: 202421047935  Patent Published		              	  July 2024</p>
+<p>Development of Robotic Arm Manipulator mounted on Self Balancing Two-Wheeled Mobile Robot, ARMS’21 	  Dec 2021</p>
+<h2>ACHIEVEMENTS &amp; AWARDS</h2>
+<p>Dedication and Invaluable Contribution Award, COEP Technological University	   April 2023</p>
+<p>2nd Place, MATLAB Modelling Award, ROBOCON 2023	   June 2023</p>
+<p>Certificate of Participation, ROBOCON  2022	    July 2022</p>
+<p>2nd Place, Virtual Robotics, MindSpark’21, COEP						        August 2021</p>
+<h2>LEADERSHIP &amp; EXTRACURRICULARS</h2>
+<p>Team Captain &amp; Secretary, Robotics Club, Robot Study Circle, COEP, Pune, India	     June 2022 - June 2023</p>
+<p>Led a 30-member multidisciplinary robotics team across Electrical and Mechanical divisions, including a 12-member electrical team, overseeing technical development, competition preparation, and team operations.</p>
+<p>Oversaw technical planning within a ~₹12 lakh annual club budget, coordinating procurement, robot-development resources, competition logistics, and technical priorities across multiple concurrent projects.</p>
+<p>Led club participation in national robotics competitions including ABU ROBOCON and the MindSpark Robotics Challenge, coordinating design reviews, integration, testing, and competition readiness.</p>
+<p>Secured approximately ₹1 lakh in external sponsorship from industry partners including iRobot and Wipro PARI, serving as a primary point of contact for external collaborations and technical initiatives.</p>
+<p>Oversaw development and delivery of 10+ robotic systems and prototypes, spanning humanoid robots, omnidirectional mobile platforms, motorized manipulators, embedded electronics, and competition-specific mechanisms.</p>
+<p>Led the ROBOCON 2023 team to 5th place nationally among 50+ teams, coordinating multidisciplinary development, testing, strategy, and on-field technical troubleshooting.</p>
+<p>Technical Member, Robotics Club, Robot Study Circle, COEP, Pune, India	     Dec 2020 - June 2023</p>
+<p>Developed and integrated embedded electronics and control subsystems across multiple robotic platforms, progressing from subsystem prototyping to competition-scale robot integration.</p>
+<p>Integrated electronics with humanoid mechanisms, omnidirectional drivetrains, motorized grippers, sensors, and actuator systems, supporting hardware bring-up, testing, and debugging.</p>
+<p>Contributed to the development of competition robots and internal prototypes while mentoring newer members in embedded systems, electronics, and robot integration.</p>
+<p>Member, The Robotics Society, Pune, India		      Dec 2020 - June 2023</p>
+<p>Supported robotics workshops, technical seminars, and expert sessions through the COEP student chapter of The Robotics Society India, helping connect students with robotics practitioners and technical learning opportunities.</p>
+<h2>LANGUAGES KNOWN</h2>
+<p>English (Full Professional Proficiency)</p>
+<p>Hindi (Full Professional Proficiency)</p>
+<p>Telugu (Native/Bilingual Proficiency</p></main></body></html>
+
