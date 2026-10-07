@@ -38,8 +38,30 @@ function initializeSkillsSlider() {
   const track = document.querySelector('#skills-track');
   const tabs = [...document.querySelectorAll('[data-skill-slide]')];
   const position = document.querySelector('#skills-position');
+  const section = track?.closest('.skills-section');
   if (!track || !tabs.length) return;
   let active = 0;
+  let autoTimer = null;
+  let sectionVisible = !('IntersectionObserver' in window);
+  let pointerInside = false;
+  let focusInside = false;
+  let touching = false;
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+  const stopAutoScroll = () => {
+    window.clearTimeout(autoTimer);
+    autoTimer = null;
+  };
+
+  const scheduleAutoScroll = () => {
+    stopAutoScroll();
+    if (reducedMotion.matches || !sectionVisible || pointerInside || focusInside || touching || document.hidden) return;
+    autoTimer = window.setTimeout(() => {
+      show(active + 1);
+      scheduleAutoScroll();
+    }, 5000);
+  };
+
   const show = (index) => {
     active = (index + tabs.length) % tabs.length;
     track.style.transform = `translate3d(-${active * 100}%, 0, 0)`;
@@ -49,17 +71,67 @@ function initializeSkillsSlider() {
       tab.setAttribute('aria-selected', String(selected));
     });
     position.textContent = `${String(active + 1).padStart(2, '0')} — ${String(tabs.length).padStart(2, '0')}`;
+    const tabsContainer = tabs[active].parentElement;
+    const centeredLeft = tabs[active].offsetLeft - (tabsContainer.clientWidth - tabs[active].offsetWidth) / 2;
+    tabsContainer.scrollTo({ left: Math.max(0, centeredLeft), behavior: 'smooth' });
   };
-  tabs.forEach((tab) => tab.addEventListener('click', () => show(Number(tab.dataset.skillSlide))));
-  document.querySelector('#skills-prev')?.addEventListener('click', () => show(active - 1));
-  document.querySelector('#skills-next')?.addEventListener('click', () => show(active + 1));
+
+  tabs.forEach((tab) => tab.addEventListener('click', () => {
+    show(Number(tab.dataset.skillSlide));
+    scheduleAutoScroll();
+  }));
+  document.querySelector('#skills-prev')?.addEventListener('click', () => {
+    show(active - 1);
+    scheduleAutoScroll();
+  });
+  document.querySelector('#skills-next')?.addEventListener('click', () => {
+    show(active + 1);
+    scheduleAutoScroll();
+  });
+
   let touchStart = 0;
-  track.addEventListener('touchstart', (event) => { touchStart = event.touches[0].clientX; }, { passive: true });
+  track.addEventListener('touchstart', (event) => {
+    touching = true;
+    touchStart = event.touches[0].clientX;
+    stopAutoScroll();
+  }, { passive: true });
   track.addEventListener('touchend', (event) => {
     const distance = event.changedTouches[0].clientX - touchStart;
     if (Math.abs(distance) > 45) show(active + (distance < 0 ? 1 : -1));
+    touching = false;
+    scheduleAutoScroll();
   }, { passive: true });
+
+  section?.addEventListener('pointerenter', () => {
+    pointerInside = true;
+    stopAutoScroll();
+  });
+  section?.addEventListener('pointerleave', () => {
+    pointerInside = false;
+    scheduleAutoScroll();
+  });
+  section?.addEventListener('focusin', () => {
+    focusInside = true;
+    stopAutoScroll();
+  });
+  section?.addEventListener('focusout', () => {
+    window.setTimeout(() => {
+      focusInside = section.contains(document.activeElement);
+      scheduleAutoScroll();
+    }, 0);
+  });
+  document.addEventListener('visibilitychange', scheduleAutoScroll);
+
+  if ('IntersectionObserver' in window && section) {
+    const visibilityObserver = new IntersectionObserver(([entry]) => {
+      sectionVisible = entry.isIntersecting;
+      scheduleAutoScroll();
+    }, { threshold: 0.2 });
+    visibilityObserver.observe(section);
+  }
+
   show(0);
+  scheduleAutoScroll();
 }
 
 function initializeCustomCursor() {
