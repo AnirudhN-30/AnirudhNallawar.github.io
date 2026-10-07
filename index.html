@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=20261007-18">
+  <link rel="stylesheet" href="styles.css?v=20261007-21">
   <script defer src="script.js?v=20261007-10"></script>
 </head>
 <body>
@@ -31,6 +31,7 @@
 
   <main id="main">
     <section class="hero shell" id="top">
+      <div class="hero-background" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
       <div class="hero-copy reveal">
         <p class="status"><i></i> Open to robotics and embedded systems roles</p>
         <h1>Building intelligence for <em>robots.</em></h1>
@@ -52,7 +53,7 @@
 
     <section class="section skills-section" id="skills">
       <div class="shell">
-        <div class="skills-heading reveal"><div><p class="kicker"><span></span> Technical toolkit</p><h2>The core skills behind my robotics work.</h2></div><p>A focused overview of the languages, controls, learning tools, and embedded systems I use most.</p></div>
+        <div class="section-heading compact-heading reveal"><p class="kicker"><span></span> Technical toolkit</p></div>
         <div class="essential-skills reveal" aria-label="Essential technical skills">
           <div class="skill-cluster"><h3>Programming &amp; platforms</h3><div><span>C++</span><span>Python</span><span>C</span><span>ROS 2</span><span>Linux</span></div></div>
           <div class="skill-cluster"><h3>Controls &amp; autonomy</h3><div><span>PID</span><span>INDI</span><span>PX4</span><span>Betaflight</span><span>NMPC</span><span>Trajectory Generation</span><span>Task &amp; Motion Planning</span></div></div>
@@ -65,7 +66,7 @@
 
     <section class="section border-top" id="projects">
       <div class="shell">
-        <div class="section-heading reveal"><p class="kicker"><span></span> Featured projects</p><h2>Three systems that define my work.</h2></div>
+        <div class="section-heading compact-heading reveal"><p class="kicker"><span></span> Featured projects</p></div>
         <div class="project-grid featured-grid">
           <article class="project-tile reveal"><a class="project-tile-media project-tile-media-contain media-white" href="projects/indi-flight.html" aria-label="Explore INDI Flight Control and Benchmarking"><img src="assets/title_card/INDI.jpeg" alt="Quadrotor hardware used for INDI flight-control testing"><span class="project-tile-number">01</span></a><div class="project-tile-body"><p>Flight controls · System identification</p><h3>INDI Flight Control &amp; Benchmarking</h3><a href="projects/indi-flight.html">Explore project <span>↗</span></a></div></article>
           <article class="project-tile reveal"><a class="project-tile-media project-tile-media-contain media-navy" href="projects/payload-control.html" aria-label="Explore Cable-Suspended Payload Control"><img src="assets/title_card/Quadrotor_Payload_model.png" alt="Quadrotor carrying a cable-suspended payload in simulation"><span class="project-tile-number">02</span></a><div class="project-tile-body"><p>Robotics · Reinforcement learning</p><h3>Cable-Suspended Payload Control</h3><a href="projects/payload-control.html">Explore project <span>↗</span></a></div></article>
@@ -122,7 +123,7 @@
 
     <section class="section border-top" id="work">
       <div class="shell">
-        <div class="section-heading reveal"><p class="kicker"><span></span> Experience</p><h2>From research prototypes to production vehicles.</h2></div>
+        <div class="section-heading compact-heading reveal"><p class="kicker"><span></span> Experience</p></div>
         <div class="work-list">
           <article class="work-item reveal"><div class="work-meta"><p>Jan 2026 — Present</p><p>Worcester, MA</p></div><div class="work-copy"><h3>Graduate Research Volunteer</h3><h4>Aerial Controls &amp; Perception Lab · WPI</h4><p>Developing autonomous control and onboard payload-state estimation for quadrotors carrying cable-suspended loads. Built a GPU-accelerated PPO training pipeline with 2,048 parallel environments at approximately 33K transitions/s—about 30× faster than the CPU pipeline—and integrated INDI flight control into Betaflight.</p></div><div class="experience-visual aerial-visual" aria-label="Animated quadrotor"><div class="drone hero-drone experience-drone" aria-hidden="true"><div class="quad-arm arm-nw"></div><div class="quad-arm arm-ne"></div><div class="quad-arm arm-sw"></div><div class="quad-arm arm-se"></div><div class="quad-rotor rotor-nw"><i></i><b></b></div><div class="quad-rotor rotor-ne"><i></i><b></b></div><div class="quad-rotor rotor-sw"><i></i><b></b></div><div class="quad-rotor rotor-se"><i></i><b></b></div><div class="drone-body"><span></span></div></div></div></article>
           <article class="work-item reveal"><div class="work-meta"><p>Jan 2023 — Jun 2025</p><p>India</p></div><div class="work-copy"><h3>Embedded Software Engineer</h3><h4>BGAUSS Auto Pvt. Ltd.</h4><p>Developed production VCU and instrument-cluster firmware supporting approximately 2,000 electric two-wheelers per month. Built BLE OTA updates deployed across approximately 10,000 vehicles, reducing update time from two hours to five minutes and improving update success from about 90% to 97%. Reduced safety-feature false triggers from approximately 50% to 5% through vehicle-state gating and field validation.</p></div><div class="experience-visual firmware-visual" aria-label="Animated VCU controlling an electric two-wheeler"><div class="ecu-chip"><span>VCU</span><i></i><i></i><i></i><i></i></div><div class="vcu-link"><i></i><i></i><i></i></div><div class="electric-scooter"><div class="scooter-wheel rear"><i></i></div><div class="scooter-wheel front"><i></i></div><div class="scooter-frame"></div><div class="scooter-floor"><i></i></div><div class="scooter-seat"></div><div class="scooter-stem"></div><div class="scooter-handle"></div><div class="scooter-battery"><span></span></div><div class="scooter-motor"></div><div class="scooter-light"></div></div><b>CAN</b><b>BLE</b><b>OTA</b></div></article>
@@ -153,7 +154,7 @@
       </div>
     </section>
 
-    <section class="section border-top" id="recognition"><div class="shell"><div class="section-heading reveal"><p class="kicker"><span></span> Recognition & leadership</p><h2>Building robots. Leading teams.</h2></div><div class="work-list">
+    <section class="section border-top" id="recognition"><div class="shell"><div class="section-heading compact-heading reveal"><p class="kicker"><span></span> Recognition & leadership</p></div><div class="work-list">
 <article class="work-item reveal"><div class="work-meta"><p>Jun 2022 — Jun 2023</p></div><div class="work-copy"><h3>Team Captain & Secretary</h3><h4>Robot Study Circle · COEP</h4><p>Led a 30-member multidisciplinary team and development of 10+ robotic systems and prototypes. Coordinated technical priorities within an approximately ₹12 lakh annual club budget and secured approximately ₹1 lakh in external sponsorship. The ROBOCON 2023 team placed fifth nationally among 50+ teams.</p></div></article>
 <article class="work-item reveal"><div class="work-meta"><p>Jul 2024</p></div><div class="work-copy"><h3>Published patent application</h3><h4>Instrument Cluster for Use with Vehicle</h4><p>Application no. 202421047935.</p></div></article>
 <article class="work-item reveal"><div class="work-meta"><p>Dec 2021</p></div><div class="work-copy"><h3>Robotics publication · ARMS’21</h3><p>Development of Robotic Arm Manipulator mounted on Self Balancing Two-Wheeled Mobile Robot.</p></div></article>
