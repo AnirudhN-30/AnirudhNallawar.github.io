@@ -296,3 +296,35 @@ code { padding: .12rem .3rem; background: rgba(181,99,69,.1); color: var(--bone)
   .experiment-list article p { grid-column: 2; }
   .outcome-metrics { grid-template-columns: 1fr; }
 }
+
+html[data-theme="dark"] {
+  --ink: #171a1f;
+  --surface: #242a31;
+  --bone: #eef2f5;
+  --dim: #bdc7d1;
+  --muted: #919eaa;
+  --line: #46515c;
+  --blue: #c96f4f;
+}
+
+html[data-theme="dark"] body {
+  background-color: var(--ink);
+  background-image: radial-gradient(circle at 1px 1px, rgba(169, 188, 204, 0.13) 1px, transparent 1.2px);
+}
+
+html[data-theme="dark"] .outcome {
+  border-color: rgba(201, 111, 79, 0.48);
+  background: linear-gradient(135deg, rgba(201, 111, 79, 0.15), rgba(36, 42, 49, 0.96));
+}
+
+html[data-theme="dark"] .detail-grid article,
+html[data-theme="dark"] .outcome-metrics div {
+  background: rgba(36, 42, 49, 0.98);
+}
+
+html[data-theme="dark"] .outcome-metrics {
+  border-color: var(--line);
+  background: var(--line);
+}
+
+html[data-theme="dark"] .architecture-media img { background: #d9ddd7; }
